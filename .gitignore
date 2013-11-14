@@ -4,3 +4,9 @@
 *.jar
 *.war
 *.ear
+*.aux
+*.log
+*.out
+*.pdf
+*.gz
+*.toc
