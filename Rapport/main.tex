@@ -1,0 +1,46 @@
+\documentclass[12pt]{article}
+
+% to compile: PDFLaTeX -> BibTeX -> PDFLaTeX -> PDFLaTeX -> View PDF
+% in this way both the table of content and bibliography is created correctly
+% shortcutkeys in TexMaker is F6 -> F11 -> F6 -> F6 -> F7
+
+\input{preamble.tex}
+
+% We want to use fancyhdr this time.
+
+\begin{document}
+
+%\includepdf{./titelblad/titelblad.pdf}
+\include{preface}
+
+%\setcounter sætter hvilket level i depth tableofcontents skal vise til, default er 3: altså subsubsection. 
+%Level -1: \part, 0: \chapter, 1: \section, 2: \subsection, 3: \subsubsection, 4: \paragraph*
+%\setcounter{tocdepth}{3}
+\tableofcontents
+
+\newpage
+\part{Introduction}
+\section{Introduction}
+
+\part{Virksomhedsbesøg}
+\input{./virksomhedsbesoeg/virksomhedsbesoeg.tex}
+
+\part{Process teori}
+
+\part{Projektet}
+
+\part{Konklusion}
+
+
+\subsection{Future works}
+
+\newpage
+\bibliography{bibliografi}
+\bibliographystyle{plain}
+\appendix
+
+\newpage
+\part{Appendix}
+\input{./appendix/appendix.tex}
+
+\end{document}

@@ -1,0 +1,63 @@
+\usepackage[english]{babel} % Forklarer at dokumentet er dansk
+\usepackage[latin1]{inputenc} % Forklarer hvilket charset er dokumentet skrevet i
+\usepackage{graphicx} % Manage external pictures
+\usepackage{pdfpages} % This package simplifies the insertion of external multi-page PDF or PS documents.
+\usepackage{listings} % to insert programming code within the document. Many languages are supported and the output can be customized.
+\usepackage{float} % Bruges blandt andet til H i figures
+\usepackage{fancyhdr} % change header and footer of any page of the document.
+\usepackage[pdfborder={0 0 0 0}]{hyperref} % Indstter url-adresser og ref-links korrekt. Disse kan vises som url adressen eller bare tekst og er klik-bare i pdf dokumentet. \href{URL}{text}
+\usepackage{verbatim} % improves the verbatim environment
+\usepackage{rotating} % Bruges til at vende teksten vertikalt
+\usepackage{framed} % Benyttes til at lave bokse om diverse ting.
+\usepackage{multirow} % Benyttes til avancerede tabeller
+\usepackage{amssymb} % it adds new symbols in to be used in math mode.
+\usepackage{color} % it adds support for colored text
+\usepackage{natbib} % gives additional citation options and styles
+\usepackage{subfigure} % addfunctionality for subfigures
+
+\usepackage{tikz}
+\usepackage[none]{hyphenat}
+
+% All of this crap is used for the parsing table DO NOT DELETE!
+\def\inputGnumericTable{} 
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{ifthen}
+% End of parsing table crap
+
+%added inorder to make pipe literals withinb tables in the ebnf
+\usepackage[T1]{fontenc}
+
+\lstset{
+	language=java,
+	keywordstyle=\bfseries\ttfamily\color[rgb]{0,0,1},
+	identifierstyle=\ttfamily,
+	commentstyle=\color[rgb]{0.133,0.545,0.133},
+	stringstyle=\ttfamily\color[rgb]{0.627,0.126,0.941},
+	showstringspaces=false,
+	basicstyle=\small,
+	numberstyle=\footnotesize,
+	numbers=left,
+	stepnumber=1,
+	numbersep=10pt,
+	tabsize=2,
+	breaklines=true,
+	prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+	breakatwhitespace=false,
+	aboveskip={1.5\baselineskip},
+	frameround=fftt,
+	frame=shadowbox,
+	columns=fixed,
+	upquote=true,
+	extendedchars=true,
+	breaklines=true
+%	alsoletter={'},
+%	morekeywords={'}
+% frame=single,
+% backgroundcolor=\color{lbcolor},
+}
+\newcommand\XOR{\mathbin{\char`\^}}
+\usepackage{textcomp}
