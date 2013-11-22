@@ -11,7 +11,6 @@
 \begin{document}
 
 %\includepdf{./titelblad/titelblad.pdf}
-\include{preface}
 
 %\setcounter sætter hvilket level i depth tableofcontents skal vise til, default er 3: altså subsubsection. 
 %Level -1: \part, 0: \chapter, 1: \section, 2: \subsection, 3: \subsubsection, 4: \paragraph*
@@ -23,11 +22,15 @@
 \section{Introduction}
 
 \part{Virksomhedsbesøg}
-\input{./virksomhedsbesoeg/virksomhedsbesoeg.tex}
+\input{virksomhedsbesoeg.tex}
+%\input{./virksomhedsbesoeg/virksomhedsbesoeg.tex}
 
 \part{Process teori}
+\input{teori.tex}
+
 
 \part{Projektet}
+\input{ideudvikling.tex}
 
 \part{Konklusion}
 
