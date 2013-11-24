@@ -1,42 +1,42 @@
-\section{Ideudvikling} 
+\section*{Ideudvikling} 
 
-\subsection{Navn på Mobil App}
+\subsection*{Navn på Mobil App}
 Food4Thought
 
-\subsection{Features}
+\subsection*{Features}
 \begin{itemize}
 \item Hovedmenu
 \item Food map
-\item Opskriftsliste  Indkbsliste
+\item Opskriftsliste  Indkøbsliste
 \item Personlige præferencer (pris, tilberedningstid)
 \end{itemize}
 
-\subsubsection{Ekstra features:}
+\subsubsection*{Ekstra features:}
 \begin{itemize}
-\item Brugerpræferencer (Calorie, protein, fedt indhold)
+\item Brugerpræferencer (Kalorie, protein, fedt indhold)
 \item Forslag til hvor tingene kan købes og hvor de kan findes i butikken
 \item GPS som finder det nærmeste supermarked med varerne på indkøbslisten (vis kun supermarkeder der samarbejdes med)
 \end{itemize}
 
 
-\subsection{Statement på Mobil App}
+\subsection*{Statement på Mobil App}
 Food4Thought er en app som sparer dig tid på at finde ud af hvad du skal have at spise, hvilke ingredienser du skal bruge og hvordan det skal tilberedes. 
 
-\subsection{Målgruppe}
+\subsection*{Målgruppe}
 Unge mennesker der ikke har tid til at finde og sammensætte deres måltider, som gerne vil have hjælp til hurtigt vil kunne sammensætte et måltid ud fra ingredienser de godt kan lide. \\
 
 Midaldrende karriere mennesker som er på arbejdsmarkedet og har en stresset hverdag, og har ikke nødvendigvis tiden til at sammensætte et måltid, til familien om aftenen. \\
 
 Mennesker som mangler ny inspiration til retter, men søger en begrænset metode til at finde nye opskrifter på.
 
-\subsection{Personas}
+\subsection*{Personas}
 Thomas på 25 er matematik studerende på AAU og har derfor en meget travl hverdag. Han har ikke tid og overskud til madlavning når han kommer hjem og han ender tit med at spise pasta og fastfood. \\
 
 Bettina er enlig mor med 3 børn på 35. Hun er sygeplejerske på Riget i København og har derfor tit varierende vagter. Pga. Bettinas vagter har hun ikke meget tid til madlavning, hvilket resulterer i at hendes børn tit spiser takeaway. \\
 
 Niels på 32 er advokat, karriere menneske og har alt for travlt til at have overskud til madlavning. Han spiser ofte på restaurant, hvilket koster kassen så han har en interesse i at cutte lidt ned i sine udgifter, men ikke på bekostning af at skulle bruge for meget tid på det.  
 
-\subsection{Brugs Scenarier}
+\subsection*{Brugs Scenarier}
 Thomas er på vej ned til supermarkedet da hans mave rumler. Han er ikke for god til at lave mad eller til at købe ind. Før Thomas går ind i supermarkedet tager han sin mobil op ad lommen og starter programmet: Food4Thought. \\
 
 Skærmbilledet på Thomases mobil viser knapperne: "FoodMap", "Recipes", "shoppinglist", "Favorite" og "My Account". Han vælger "FoodMap" og trykker på knappen. \\
@@ -54,7 +54,7 @@ Et nyt skærmbillede fremviser nu et stort billede af retten, tilberedningsmetode
 Thomas er nu ellevild, da han ikke havde forventet at kylling med pesto, mandler, bulgur og chili kunne smage så godt. Han er begejstret over kun at have brugt 2 min på at finde opskriften, samt 5 min på at købe ingredienser.
 
 
-\subsection{Prototyper}
+\subsection*{Prototyper}
 \begin{enumerate}
 \item Billed 1 (Hovedmenu): 
 \begin{itemize}
@@ -73,28 +73,44 @@ Thomas er nu ellevild, da han ikke havde forventet at kylling med pesto, mandler
 \includegraphics[scale=0.65]{includes/billeder/sammensat.jpg}
 
 
-\subsection{Arkitektur}
+\subsection*{Arkitektur}
 Appen tilgår en gratis tilgængelig API med over 200.000 opskrifter. \\
 Hvor ligger vi databasen, lokalt eller på server? Og hvordan og hvor ofte opdaterer vi den?
 
 
-\subsection{Business Canvas}
+\subsection*{Business Canvas}
+\includegraphics[scale=0.10]{includes/billeder/business_model_canvas.png}
 
-
-\subsection{Vision}
+\subsection*{Vision}
 Sammenfat i et produkt vision + vision statement.
 
 Food4Thought:
 For people who are busy or unexperienced in preparing or shopping food, who need a better tool to help them with shopping and planning. Food4Thought is a simple and intuitive mobile app that provide users to make quick and easy food recipe choices.
 Unlike other apps, webpages and search engines, Food4Thought offers a simple gui, and simple selection system to create a full information plate, with suggestions for food, recipes and shopping list. \\
  
-\subsubsection{Features}
+\subsubsection*{Features}
 Quick food selection| Recipe list | Shopping list | Preparation list | User control panel | Community site |
 
+\newpage
 
-\subsection{Product backlog}
+\subsection*{Risici}
+\input{risici.tex}
 
 
-\subsection{Risici}
-Teknologi (android) \\
-Database
+\subsection*{Product backlog}
+\textbf{Skal vi benytte user stories...?}  \\
+
+Opgaver der skal laves:
+\begin{itemize}
+\item Databasen eller simulering af den
+\item Hovedmenu
+\item FoodMap
+\begin{itemize}
+\item Design
+\item Opskrifts tilføjelse
+\item Opskrifts forslag
+\end{itemize}
+\item Opskrifts liste
+\item Opskrifts detaljer
+\end{itemize}
+
