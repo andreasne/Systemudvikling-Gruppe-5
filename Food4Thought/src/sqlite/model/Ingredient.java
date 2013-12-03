@@ -1,6 +1,6 @@
 package sqlite.model;
 
-public class Ingredients {
+public class Ingredient {
 	
 	private int id;
 	private String quantity;

@@ -1,9 +1,9 @@
 package sqlite.model;
 
-public class Favorites {
+public class Favorite {
 	
 	private int id;
-	private Recipes recipe;
+	private Recipe recipe;
 	
 	
 	public int getId() {
@@ -12,10 +12,10 @@ public class Favorites {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Recipes getRecipe() {
+	public Recipe getRecipe() {
 		return recipe;
 	}
-	public void setRecipe(Recipes recipe) {
+	public void setRecipe(Recipe recipe) {
 		this.recipe = recipe;
 	}
 }

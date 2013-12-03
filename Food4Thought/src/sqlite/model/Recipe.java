@@ -1,9 +1,9 @@
 package sqlite.model;
 
-public class Recipes {
+public class Recipe {
 	
 	private int id;
-	private Ingredients ingredient;
+	private Ingredient ingredient;
 	private String description;
 	private String preparation;
 	
@@ -15,10 +15,10 @@ public class Recipes {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Ingredients getIngredient() {
+	public Ingredient getIngredient() {
 		return ingredient;
 	}
-	public void setIngredient(Ingredients ingredient) {
+	public void setIngredient(Ingredient ingredient) {
 		this.ingredient = ingredient;
 	}
 	public String getDescription() {
