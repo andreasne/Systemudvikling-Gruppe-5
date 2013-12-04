@@ -3,7 +3,6 @@ package sqlite.model;
 public class Ingredient {
 	
 	private int id;
-	private String quantity;
 	private String ingredient;
 	
 	
@@ -13,12 +12,6 @@ public class Ingredient {
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public String getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(String quantity) {
-		this.quantity = quantity;
 	}
 	public String getIngredient() {
 		return ingredient;

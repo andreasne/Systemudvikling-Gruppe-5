@@ -27,9 +27,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	 * database tables
 	 */
 	private static final String TABLE_RECIPE = "recipe";
-	private static final String TABLE_FAVORITE = "favorite";
 	private static final String TABLE_INGREDIENT = "ingredient";
-	private static final String TABLE_SHOPPINGLIST = "shoppinglist";
+	private static final String TABLE_INGREDIENTRECIPE = "ingredientrecipe";
 
 	
 	/**
@@ -38,8 +37,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	private static final String KEY_ID = "id";
 	private static final String KEY_CREATED_AT = "created_at";
 	
-	// ingredient column name
-	private static final String KEY_ID_INGREDIENT = "id_ingredient";
+	
 	
 	
 	/**
@@ -51,64 +49,77 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	// preparation column name
 	private static final String KEY_PREPARATION = "preparation";
 	
+	// name for recipe column name
+	private static final String KEY_NAME = "name_recipe";
+	
+	// boolean for column is favorite
+	private static final String KEY_ISFAVORITE = "is_favorite";
+
+	
 	
 	/**
 	 * column names for ingredient
 	 */
-	// quantity column name
-	private static final String KEY_QUANTITY = "quantity";
+	
 	
 	//ingredientname column name
 	private static final String KEY_INGREDIENT_NAME = "name_ingredient";
 	
+	
 	/**
-	 * column names for favorite
+	 *  column names for IngredientRecipe
 	 */
+	// idingredient column name
+	private static final String KEY_ID_INGREDIENT = "idingredient";
+	
+	// idrecipe column name
 	private static final String KEY_ID_RECIPE = "idrecipe";
 	
+	// quantity column name
+	private static final String KEY_QUANTITY = "quantity";
+	
+	//
+	private static final String KEY_ISLIST = "islist";
 	
 	/**
-	 * Create table statements for: CREATE_TABLE_RECIPE, CREATE_TABLE_FAVORITE,
-	 * CREATE_TABLE_INGREDIENT, CREATE_TABLE_SHOPPINGLIST
+	 * Create table statements for: CREATE_TABLE_RECIPE,
+	 * CREATE_TABLE_INGREDIENT, CREATE_TABLE_INGREDIENTRECIPE
 	 */
 	// recipe table create statement
 	private static final String CREATE_TABLE_RECIPE = 
 			"CREATE TABLE " + TABLE_RECIPE + 
 			"(" 
-			+ KEY_ID + " INTEGER PRIMARY KEY," 
+			+ KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+			+ KEY_NAME + " TEXT,"
 			+ KEY_ID_INGREDIENT + " TEXT,"
 			+ KEY_DESCRIPTION + " TEXT,"
-			+ KEY_PREPARATION + " TEXT" + 
+			+ KEY_PREPARATION + " TEXT,"
+			+ KEY_ISFAVORITE + " BOOLEAN" +
 			");";
 			
-
-	// favorite table create statement
-	private static final String CREATE_TABLE_FAVORITE =
-			"CREATE TABLE " + TABLE_FAVORITE +
-			"(" 
-			+ KEY_ID + " INTEGER PRIMARY KEY,"
-			+ KEY_ID_INGREDIENT + " INTEGER" +
-			");";
-	
 	
 	// ingredient table create statement
 	private static final String CREATE_TABLE_INGREDIENT =
 			"CREATE TABLE " + TABLE_INGREDIENT +
 			"("
-			+ KEY_ID + " INTEGER PRIMARY KEY,"
-			+ KEY_QUANTITY + " INTEGER,"
+			+ KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
 			+ KEY_INGREDIENT_NAME + " TEXT" +
 			");";
 	
-	
-	// shoppinglist table create statement
-	private static final String CREATE_TABLE_SHOPPINGLIST =
-			"CREATE TABLE " + TABLE_SHOPPINGLIST +
+	// ingredientrecipe table create statement
+	private static final String CREATE_TABLE_INGREDIENTRECIPE =
+			"CREAT TABLE " + TABLE_INGREDIENTRECIPE +
 			"("
-			+ KEY_ID + " INTEGER PRIMARY KEY,"
-			+ KEY_ID_RECIPE + " INTEGER" +
+			+ KEY_ID_INGREDIENT + " INTEGER," 
+			+ KEY_ID_RECIPE + " INTEGER," 
+			+ KEY_QUANTITY + " INTEGER," 
+			+ KEY_ISLIST + " BOOLEAN," 
+			+ " FOREIGN KEY (" + KEY_ID_INGREDIENT + ") REFERENCES " 
+			+ TABLE_INGREDIENT + "(" + KEY_ID + ")"
+			+ " FOREIGN KEY (" + KEY_ID_RECIPE + ") REFERENCES " 
+			+ TABLE_RECIPE + "(" + KEY_ID + ")" +
 			");";
-	
+			
 	
 	/**
 	 * implementing methods from DatabaseHelper
@@ -135,8 +146,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		// creating required tables
 		db.execSQL(CREATE_TABLE_INGREDIENT);
 		db.execSQL(CREATE_TABLE_RECIPE);
-		db.execSQL(CREATE_TABLE_FAVORITE);
-		db.execSQL(CREATE_TABLE_SHOPPINGLIST);
+		db.execSQL(CREATE_TABLE_INGREDIENTRECIPE);
 	}
 
 	@Override
@@ -145,9 +155,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		// on upgrade drop tables
 		db.execSQL(CREATE_TABLE_INGREDIENT);
 		db.execSQL(CREATE_TABLE_RECIPE);
-		db.execSQL(CREATE_TABLE_FAVORITE);
-		db.execSQL(CREATE_TABLE_SHOPPINGLIST);
-		
+		db.execSQL(CREATE_TABLE_INGREDIENTRECIPE);
 		onCreate(db);
 	}
 	
@@ -171,7 +179,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		
 		Ingredient ingredientObj = new Ingredient();
 		ingredientObj.setId(c.getInt(c.getColumnIndex(KEY_ID)));
-		ingredientObj.setQuantity(c.getString(c.getColumnIndex(KEY_QUANTITY)));
 		ingredientObj.setIngredient(c.getString(c.getColumnIndex(KEY_INGREDIENT_NAME)));
 		
 		return ingredientObj;
@@ -194,32 +201,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		
 		Recipe recipeObj = new Recipe();
 		recipeObj.setId(c.getInt(c.getColumnIndex(KEY_ID)));
-		recipeObj.setIngredient(getIngredient(c.getInt(c.getColumnIndex(KEY_ID_INGREDIENT))));
-	}
-	
-	/**
-	 * get single favorite
-	 */
-	public Favorite getFavorite(long id_favorite){
-		SQLiteDatabase db = this.getReadableDatabase();
+		recipeObj.setName(c.getString(c.getColumnIndex(KEY_NAME)));
+		recipeObj.setPreparation(c.getString(c.getColumnIndex(KEY_PREPARATION)));
+		recipeObj.setDescription(c.getString(c.getColumnIndex(KEY_DESCRIPTION)));
+		recipeObj.setIsFavorite(c.getInt(c.getColumnIndex(KEY_ISFAVORITE)));
 		
-		String selectQuery = "SELECT * FROM " + TABLE_FAVORITE + " WHERE "
-				+ KEY_ID + " = " + id_favorite;
-		
-		Log.e(LOG, selectQuery);
-		
-		Cursor c = db.rawQuery(selectQuery, null);
-		
-		if(c != null){
-			c.moveToFirst();
-		}
-		
-		Favorite favoriteObj = new Favorite();
-		favoriteObj.setId(c.getInt(c.getColumnIndex(KEY_ID)));
-		favoriteObj.setRecipe(c.getInt(c.getColumnIndex(KEY_ID_RECIPE)));
-		
-		
-		
+		return recipeObj;
 	}
 	
 }
