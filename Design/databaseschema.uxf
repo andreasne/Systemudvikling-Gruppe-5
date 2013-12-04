@@ -28,13 +28,13 @@ name_ingredient: String</panel_attributes>
 --
 id: Int
 --
-idIngredient: Int
---
-name_recupe: String
+name: String
 --
 description: String
 --
-preparation: String</panel_attributes>
+preparation: String
+--
+is_favorite: bool</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -45,7 +45,7 @@ preparation: String</panel_attributes>
       <w>210</w>
       <h>120</h>
     </coordinates>
-    <panel_attributes>_IngredientRecipes_
+    <panel_attributes>_IngredientRecipe_
 --
 idIngredient: Int
 --
@@ -53,7 +53,8 @@ idRecipe: Int
 --
 quantity: Int
 --
-isList : bool</panel_attributes>
+isList : bool
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -74,10 +75,10 @@ isList : bool</panel_attributes>
       <x>270</x>
       <y>190</y>
       <w>90</w>
-      <h>200</h>
+      <h>180</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 </panel_attributes>
-    <additional_attributes>70;180;30;180;30;30;70;30</additional_attributes>
+    <additional_attributes>70;160;30;160;30;30;70;30</additional_attributes>
   </element>
 </diagram>

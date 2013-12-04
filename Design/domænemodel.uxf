@@ -28,8 +28,7 @@ quantity: String
     <panel_attributes>_Recipe_
 --
 id: Int
-idIngredient
-nameRecipe: String
+name: String
 description: String
 preparation: String
 isFavorite: Bool
