@@ -2,9 +2,11 @@ package sqlite.model;
 
 public class IngredientRecipe {
 	
+	private Ingredient Ingredient;
+	private Recipe recipe;
 	private int idIngredient;
 	private int idRecipe;
-	private int quantity;
+	private String quantity;
 	private int isList;
 	
 	
@@ -20,10 +22,10 @@ public class IngredientRecipe {
 	public void setIdRecipe(int idRecipe) {
 		this.idRecipe = idRecipe;
 	}
-	public int getQuantity() {
+	public String getQuantity() {
 		return quantity;
 	}
-	public void setQuantity(int quantity) {
+	public void setQuantity(String quantity) {
 		this.quantity = quantity;
 	}
 	public boolean isList() {
@@ -42,5 +44,18 @@ public class IngredientRecipe {
 	public void setList(int isList) {
 		this.isList = isList;
 	}
-
+	
+	public Ingredient getIngredient() {
+		return Ingredient;
+	}
+	public void setIngredient(Ingredient ingredient) {
+		Ingredient = ingredient;
+	}
+	
+	public Recipe getRecipe() {
+		return recipe;
+	}
+	public void setRecipe(Recipe recipe) {
+		this.recipe = recipe;
+	}
 }
