@@ -92,7 +92,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	private static final String CREATE_TABLE_RECIPE = 
 			"CREATE TABLE " + TABLE_RECIPE + 
 			"(" 
-			+ KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+			+ KEY_ID + " INTEGER PRIMARY KEY,"
 			+ KEY_NAME + " TEXT,"
 			+ KEY_DESCRIPTION + " TEXT,"
 			+ KEY_PREPARATION + " TEXT,"
@@ -104,7 +104,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	private static final String CREATE_TABLE_INGREDIENT =
 			"CREATE TABLE " + TABLE_INGREDIENT +
 			"("
-			+ KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+			+ KEY_ID + " INTEGER PRIMARY KEY,"
 			+ KEY_CATEGORY + " TEXT,"
 			+ KEY_INGREDIENT_NAME + " TEXT" +
 			");";
@@ -218,12 +218,62 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		return recipeObj;
 	}
 	
+	//getting all recipes
+	public ArrayList<Recipe> getAllRecipes(){
+		SQLiteDatabase db = this.getReadableDatabase();
+		ArrayList<Recipe> recipeList = new ArrayList<Recipe>();
+		String selectQuery = "SELECT * FROM" + TABLE_RECIPE;
+		
+		Log.e(LOG, selectQuery);
+		
+		Cursor c = db.rawQuery(selectQuery, null);
+		if(c.moveToFirst()){
+			Recipe recipeObj = new Recipe();
+			recipeObj.setId(c.getInt(c.getColumnIndex(KEY_ID)));
+			recipeObj.setName(c.getString(c.getColumnIndex(KEY_NAME)));
+			recipeObj.setPreparation(c.getString(c.getColumnIndex(KEY_PREPARATION)));
+			recipeObj.setDescription(c.getString(c.getColumnIndex(KEY_DESCRIPTION)));
+			recipeObj.setIsFavorite(c.getInt(c.getColumnIndex(KEY_ISFAVORITE)));
+			
+			recipeList.add(recipeObj);
+		}
+		return recipeList;
+	}
+	
+	//getting all ingredients
+	public ArrayList<Ingredient> getAllIngredients(){
+		
+		SQLiteDatabase db = this.getReadableDatabase();
+		ArrayList<Ingredient> ingredientList = new ArrayList<Ingredient>();
+		String selectQuery = "SELECT * FROM" + TABLE_INGREDIENT;
+		
+		Log.e(LOG, selectQuery);
+		
+		Cursor c = db.rawQuery(selectQuery, null);
+		
+		// looping through all rows and adding to list
+		if(c.moveToFirst()){
+			do{
+				Ingredient ingredientObj = new Ingredient();
+				ingredientObj.setId(c.getInt(c.getColumnIndex(KEY_ID)));
+				ingredientObj.setCategory(c.getString(c.getColumnIndex(KEY_CATEGORY)));
+				ingredientObj.setIngredient(c.getString(c.getColumnIndex(KEY_INGREDIENT_NAME)));
+				
+				//adding  to ingredientlist
+				ingredientList.add(ingredientObj);
+			}while(c.moveToNext());
+		}
+		
+		return ingredientList;
+	}
 	
 	
+	//get a recipe with all ingredients
 	public Recipe getRecipeWithIngredients(long id_recipe){
 		SQLiteDatabase db = this.getReadableDatabase();
 		ArrayList<IngredientRecipe> ingredientRecipeList = new ArrayList<IngredientRecipe>();
 		
+		//getting recipe by id
 		String selectQuery = "SELECT * FROM " + TABLE_RECIPE + "WHERE "
 				+ KEY_ID + " = " + id_recipe;
 		
@@ -249,6 +299,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			
 			Cursor c2 = db.rawQuery(selectQuery2, null);
 			
+			//looping through all ingredientrecipes and adding them to ingredientList
 			if(c2.moveToFirst()){
 				do{
 					IngredientRecipe ingredientRecipeObj = new IngredientRecipe();
@@ -256,7 +307,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 					ingredientRecipeObj.setIdRecipe(c2.getInt(c2.getColumnIndex(KEY_ID_RECIPE)));
 					ingredientRecipeObj.setList(c2.getInt(c2.getColumnIndex(KEY_ISLIST)));
 					ingredientRecipeObj.setQuantity(c2.getString(c2.getColumnIndex(KEY_QUANTITY)));
-					
+						
+						//connecting ingredients
 						String selectQuery3 = "SELECT * FROM " + TABLE_INGREDIENT + "WHERE "
 								+ c2.getInt(c2.getColumnIndex(KEY_ID_INGREDIENT)) + " = " + id_recipe;
 						
@@ -271,69 +323,79 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 						ingredientObj.setId(c3.getInt(c3.getColumnIndex(KEY_ID)));
 						ingredientObj.setCategory(c3.getString(c3.getColumnIndex(KEY_CATEGORY)));
 						ingredientObj.setIngredient(c3.getString(c3.getColumnIndex(KEY_INGREDIENT_NAME)));
+					// adding ingredient object to ingredientrecipe	
 					ingredientRecipeObj.setIngredient(ingredientObj);
-					
+					// adding ingredientrecipe to list
 					ingredientRecipeList.add(ingredientRecipeObj);
 				}while(c2.moveToNext());
 			}
+		//adding Ingridientrecipelist to recipe
 		recipeObj.setIngredientRecipeList(ingredientRecipeList);
 		
 		return recipeObj;
-		/**
-		if(c.moveToFirst()){
-			do{
-				IngredientRecipe ingredientRecipeObj = new IngredientRecipe();
-				ingredientRecipeObj.setIdIngredient(c.getInt(c.getColumnIndex(KEY_ID_INGREDIENT)));
-				ingredientRecipeObj.setIdRecipe(c.getInt(c.getColumnIndex(KEY_ID_RECIPE)));
-				
-				String selectQuery2 = "SELECT * FROM " + TABLE_INGREDIENT + "WHERE "
-						+ c.getInt(c.getColumnIndex(KEY_ID_INGREDIENT)) + " = " + id_recipe;
-				
-				Log.e(LOG, selectQuery2);
-				
-				Cursor c2 = db.rawQuery(selectQuery2, null);
-				
-				ingredientRecipeObj.setIngredient(c2.get);
-				ingredientRecipeObj.setQuantity(c.getInt(c.getColumnIndex(KEY_QUANTITY)));
-				ingredientRecipeObj.setList(c.getInt(c.getColumnIndex(KEY_ISLIST)));
-			} while(c.moveToNext());
-		}
-		*/
-		
-		/**
+	}
+	
+	public Ingredient getIngredientWithRecipe(String ingredientName){
 		SQLiteDatabase db = this.getReadableDatabase();
-		List<Ingredient> ingredientList = new ArrayList<Ingredient>();
-		Recipe recipeObj = getRecipe(id_recipe);
+		ArrayList<IngredientRecipe> ingredientRecipeList = new ArrayList<IngredientRecipe>();
 		
-		String selectQuery = "SELECT * FROM " + TABLE_INGREDIENTRECIPE + "WHERE "
-				+ KEY_ID_RECIPE + " = " + id_recipe;
+		//get ingredient by name
+		String selectQuery = "SELECT * FROM " + TABLE_RECIPE + "WHERE "
+				+ KEY_INGREDIENT_NAME + " = " + ingredientName;
 		
 		Log.e(LOG, selectQuery);
 		
 		Cursor c = db.rawQuery(selectQuery, null);
 		
-		if (c.moveToFirst()){
-			do {
-				IngredientRecipe ingredientRecipeObj = new IngredientRecipe();
-				ingredientRecipeObj.
-			} while(c.moveToNext());
-		}
-		
-		//looping through all ingredientrecipe and saving them to an arraylist.
-		if (c.moveToFirst()){
-			do {
-				Ingredient ingredientObj = getIngredient(c.getInt(c.getColumnIndex(KEY_ID_INGREDIENT)));
-				
-				//add ingredient object to list
-				ingredientList.add(ingredientObj);
-			} while (c.moveToNext());
-		if (c != null)
+		if (c != null){
 			c.moveToFirst();
-		IngredientRecipe ingredientRecipeObj = new IngredientRecipe();
-		ingredientRecipeObj.setIngredientList(ingredientList);
-		ingredientRecipeObj.se
 		}
-		*/
+		Ingredient ingredientObj = new Ingredient();
+		ingredientObj.setId(c.getInt(c.getColumnIndex(KEY_ID)));
+		ingredientObj.setCategory(c.getString(c.getColumnIndex(KEY_CATEGORY)));
+		ingredientObj.setIngredient(c.getString(c.getColumnIndex(KEY_INGREDIENT_NAME)));
+		
+		//get connected ingredientrecipe by ingredient id
+			String selectQuery2 = "SELECT * FROM " + TABLE_INGREDIENTRECIPE + "WHERE "
+					+ KEY_ID_INGREDIENT + " = " + c.getInt(c.getColumnIndex(KEY_ID));
+			
+			Log.e(LOG, selectQuery2);
+			
+			Cursor c2 = db.rawQuery(selectQuery2, null);
+			
+			//populate arraylist with ingredientrecipe objects
+			if(c2.moveToFirst()){
+				do{
+					IngredientRecipe ingredientRecipeObj = new IngredientRecipe();
+					ingredientRecipeObj.setIdIngredient(c2.getInt(c2.getColumnIndex(KEY_ID_INGREDIENT)));
+					ingredientRecipeObj.setIdRecipe(c2.getInt(c2.getColumnIndex(KEY_ID_RECIPE)));
+					ingredientRecipeObj.setList(c2.getInt(c2.getColumnIndex(KEY_ISLIST)));
+					ingredientRecipeObj.setQuantity(c2.getString(c2.getColumnIndex(KEY_QUANTITY)));
+					
+					//get connected recipes
+						String selectQuery3 = "SELECT * FROM " + TABLE_RECIPE + "WHERE "
+								+ KEY_ID + " = " + c2.getInt(c2.getColumnIndex(KEY_ID_RECIPE));
+						
+						Log.e(LOG, selectQuery3);
+						
+						Cursor c3 = db.rawQuery(selectQuery3, null);
+						if(c3 != null)
+							c3.moveToFirst();
+						
+						Recipe recipeObj = new Recipe();
+						recipeObj.setId(c3.getInt(c3.getColumnIndex(KEY_ID)));
+						recipeObj.setName(c3.getString(c3.getColumnIndex(KEY_NAME)));
+						recipeObj.setPreparation(c3.getString(c3.getColumnIndex(KEY_PREPARATION)));
+						recipeObj.setDescription(c3.getString(c3.getColumnIndex(KEY_DESCRIPTION)));
+						recipeObj.setIsFavorite(c3.getInt(c3.getColumnIndex(KEY_ISFAVORITE)));
+					ingredientRecipeObj.setRecipe(recipeObj);
+						
+					ingredientRecipeList.add(ingredientRecipeObj);
+				}while(c2.moveToNext());
+			}
+		ingredientObj.setIngredientRecipeList(ingredientRecipeList);
+		
+		return ingredientObj;
 	}
 	
 }

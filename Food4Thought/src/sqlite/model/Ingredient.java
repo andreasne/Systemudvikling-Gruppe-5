@@ -1,13 +1,23 @@
 package sqlite.model;
 
+import java.util.ArrayList;
+
 public class Ingredient {
 	
 	private int id;
 	private String category;
 	private String ingredient;
+	private ArrayList<IngredientRecipe> ingredientRecipeList;
 	
 	
 	
+	public ArrayList<IngredientRecipe> getIngredientRecipeList() {
+		return ingredientRecipeList;
+	}
+	public void setIngredientRecipeList(
+			ArrayList<IngredientRecipe> ingredientRecipeList) {
+		this.ingredientRecipeList = ingredientRecipeList;
+	}
 	public int getId() {
 		return id;
 	}
