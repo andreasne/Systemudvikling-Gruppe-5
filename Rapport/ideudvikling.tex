@@ -7,7 +7,7 @@ Food4Thought
 \begin{itemize}
 \item Hovedmenu
 \item Food map
-\item Opskriftsliste  Indkøbsliste
+\item Opskriftliste  Indkøbsliste
 \item Personlige præferencer (pris, tilberedningstid)
 \end{itemize}
 
@@ -36,7 +36,7 @@ Bettina er enlig mor med 3 børn på 35. Hun er sygeplejerske på Riget i København
 
 Niels på 32 er advokat, karriere menneske og har alt for travlt til at have overskud til madlavning. Han spiser ofte på restaurant, hvilket koster kassen så han har en interesse i at cutte lidt ned i sine udgifter, men ikke på bekostning af at skulle bruge for meget tid på det.  
 
-\subsection*{Brugs Scenarier}
+\subsection*{Brugs scenarier}
 Thomas er på vej ned til supermarkedet da hans mave rumler. Han er ikke for god til at lave mad eller til at købe ind. Før Thomas går ind i supermarkedet tager han sin mobil op ad lommen og starter programmet: Food4Thought. \\
 
 Skærmbilledet på Thomases mobil viser knapperne: "FoodMap", "Recipes", "shoppinglist", "Favorite" og "My Account". Han vælger "FoodMap" og trykker på knappen. \\
@@ -73,11 +73,10 @@ Thomas er nu ellevild, da han ikke havde forventet at kylling med pesto, mandler
 \includegraphics[scale=0.65]{includes/billeder/sammensat.jpg}
 
 
-\subsection*{Arkitektur}
-Appen tilgår en gratis tilgængelig API med over 200.000 opskrifter. \\
-Hvor ligger vi databasen, lokalt eller på server? Og hvordan og hvor ofte opdaterer vi den?
+\newpage
 
-\includegraphics[scale=0.40]{includes/billeder/arkitektur.png}
+\subsection*{Arkitektur}
+\input{arkitektur.tex}
 
 \subsection*{Business Canvas}
 \includegraphics[scale=0.10]{includes/billeder/business_model_canvas.png}
@@ -91,61 +90,3 @@ Unlike other apps, webpages and search engines, Food4Thought offers a simple gui
  
 \subsubsection*{Features}
 Quick food selection| Recipe list | Shopping list | Preparation list | User control panel | Community site |
-
-\newpage
-
-\subsection*{Risici}
-\input{risici.tex}
-
-
-\subsection*{Product backlog}
-\textbf{Skal vi benytte user stories...?}  \\
- prioritering i parentes
-Opgaver der skal laves:
-\begin{itemize}
-\item Kunden vil gerne have en menu til navigering i appen. (9)
-\item Kunden vil gerne have en særskilt indkøbsliste, som kan tilgås fra hovedmenuen. (12)
-\item Kunden vil gerne kunne gemme opskrifter i favoritter. (11)
-\item Kunden vil gerne kunne gemme indkøbsliste i indkøbsoversigt. (10)
-\item Kunden vil gerne have flere forslag til ingredienser frem på food map, ved at trykke på den midterste knap. (1)
-\item Kunden vil have et animeret foodmap, hvor ingredienser popper ud fra den eksisterende ingrediensbobbel. (2)
-\item Kunden vil gerne kunne fjerne og tilføje ingredienser i food map. (3)
-\item Kunden vil gerne kunne få et hurtigt overblik over indkøbs og præperationsliste ved opskrift. (8)
-\item Kunden vil gerne have listet opskrifter med billeder, beskrivelse, ingredienser og tilberedning. (7)
-\item Kunden vil gerne have en liste over forskellige opskrifter som er udvalgt af de anførte ingredienser. (4) 
-\item Kunden vil gerne have hurtig søgeforslag til ingredienser (Performance). (6)
-\end{itemize}
-
-\subsection*{Opdateret produkt backlog 09.12.2013}
-\begin{itemize}
-\item Udvikleren vil gerne tilføje opskrifter/ingredienser til database. (3)
-\item Brugeren vil gerne have forslag til ingredienser. - Algoritme (5)
-\item Brugeren vil gerne tilføje en ingrediens. (6)
-\item Udvikleren vil gerne gemme data i database tabeller. (2)
-\item Brugeren vil gerne have en grafisk overflade for foodmap. (1)
-\item Brugeren vil gerne have en liste med forskellige opskrifter som er udvalgt af de anførte ingredienser. (7)
-\item Brugeren vil gerne have adgang til databasen. (4)
-\item Brugeren vil gerne have hurtige søgeforslag til ingredienser. (performance) (13)
-\item Brugeren vil gerne gemme opskrifter i favoritter. (12)
-\item Brugeren vil gerne have opskrifter med billede, beskrivelse og ingredienser. (8)
-\item Brugeren vil gerne have adgang til indkøbsliste. (11)
-\item Brugeren vil gerne fjerne ingredienser. (10)
-\item Brugeren vil gerne kunne navigere i appen gennem menu. (9) 
-\end{itemize}
-
-
-\subsection{Velocity}
-
-4 timer om dagen per mand
-8 mandetimer om dagen med 2 hold
-4 dage første uge
-5 dage anden uge
-5 dage tredje uge
-
-5 storypoint (standard) tager 8 mandetimer
-5/8 = 0,625 storypoint per mandetime
-
-40 mande timer i en iteration
-40*0,625 = 25 storypoints per uge
-			5 storypoints per dag
-
