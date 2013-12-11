@@ -1,5 +1,9 @@
 package sqlite.helper;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,23 +13,138 @@ import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 	
-	private static final String LOG = "DatabaseHelper";
 	
-	private static final int DATABASE_VERSION = -1;
+	// Path to the database
+	private static final String DB_PATH = "/Food4Thought/com.UCN.food4thought/assets/";
+	
+	// database name
+	private static final String DB_NAME = "foodMapDatabase";
 	
 	// database name
 	private static final String DATABASE_NAME = "foodMapDatabase";
 	
+	private SQLiteDatabase myDataBase;
 	
+	private static Context myContext;
+	
+	private static final String ye = "/data/data/" + myContext.getApplicationContext().getPackageName() + "/";
+	
+	// myContext.getFilesDir().getPath()
+		
+	private static final String LOG = "DatabaseHelper";
+	
+	private static final int DATABASE_VERSION = 1;
+	
+	
+	
+	/**
+	 * implementing methods from DatabaseHelper
+	 */
+	public DatabaseHelper(Context context){
+		super(context, DATABASE_NAME, null, DATABASE_VERSION);
+	}
 	
 
+	/**
+	 * Create empty database to the system and rewrite to our own database.
+	 */
+	public void createDataBase() throws IOException{
+		
+		boolean dbExist = checkDataBase();
+		
+		if(dbExist){
+			
+		}else
+		{
+			this.getReadableDatabase();
+			
+			try{
+				copyDataBase();
+			}catch(IOException e){
+				
+				throw new Error("Error copying database");
+			}
+		}
+		
+	}
 	
-
+	
+	/**
+	 * Check if database already exist to avoid re-copying the file each time
+	 */
+	private boolean checkDataBase(){
+		
+		SQLiteDatabase checkDB = null;
+		
+		try{
+			String myPath = DB_PATH + DB_NAME;
+			checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+			
+		}catch(SQLiteException e){
+			
+		}
+		
+		if(checkDB != null){
+			
+			checkDB.close();
+		}
+		
+		return checkDB != null ? true : false;
+	}
+	
+	
+	
+	/**
+	 * Copies your database from your local assets-folder to the just created empty database in the
+	 * system folder, from where it can be accessed and handled.
+	 * This is done by transfering bytestream.
+	 * */
+	private void copyDataBase() throws IOException {
+		
+		InputStream myInput = myContext.getAssets().open(DB_NAME);
+		
+		String outFileName = DB_PATH + DB_NAME;
+		
+		OutputStream myOutput = new FileOutputStream(outFileName);
+		
+		byte[] buffer = new byte[1024];
+		int length;
+		while((length = myInput.read(buffer))>0){
+			myOutput.write(buffer, 0, length);
+		}
+		
+		myOutput.flush();
+		myOutput.close();
+		myInput.close();
+	}
+	
+	@Override
+	public synchronized void close(){
+		if(myDataBase != null){
+			myDataBase.close();
+		}
+		
+		super.close();
+		
+	}
+	@Override
+	public void onCreate(SQLiteDatabase db) {
+	}
+ 
+	@Override
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+	 
+	}
+	
+	
+	
+	
 	/**
 	 * database tables
 	 */
@@ -88,6 +207,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	 * Create table statements for: CREATE_TABLE_RECIPE,
 	 * CREATE_TABLE_INGREDIENT, CREATE_TABLE_INGREDIENTRECIPE
 	 */
+	/*
 	// recipe table create statement
 	private static final String CREATE_TABLE_RECIPE = 
 			"CREATE TABLE " + TABLE_RECIPE + 
@@ -124,25 +244,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 			");";
 			
 	
-	/**
-	 * implementing methods from DatabaseHelper
-	 */
-	public DatabaseHelper(Context context, String name, CursorFactory factory,
-			int version, DatabaseErrorHandler errorHandler) {
-		super(context, name, factory, version, errorHandler);
-		// TODO Auto-generated constructor stub
-	}
 
-	public DatabaseHelper(Context context, String name, CursorFactory factory,
-			int version) {
-		super(context, name, factory, version);
-		// TODO Auto-generated constructor stub
-	}
 	
 	
 	/*
 	 * implementing constructors from DatabaseHelper
-	 */
+	 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		
@@ -161,7 +268,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		db.execSQL(CREATE_TABLE_INGREDIENTRECIPE);
 		onCreate(db);
 	}
-	
+	*/
 	
 	/**
 	 * get single ingredient

@@ -5,7 +5,7 @@
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>340</x>
-      <y>50</y>
+      <y>70</y>
       <w>210</w>
       <h>100</h>
     </coordinates>
@@ -22,7 +22,7 @@ name_ingredient: String</panel_attributes>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>340</x>
-      <y>320</y>
+      <y>340</y>
       <w>210</w>
       <h>130</h>
     </coordinates>
@@ -30,7 +30,7 @@ name_ingredient: String</panel_attributes>
 --
 id: Int
 --
-name: String
+name_recipe: String
 --
 description: String
 --
@@ -43,7 +43,7 @@ is_favorite: bool</panel_attributes>
     <type>com.umlet.element.Class</type>
     <coordinates>
       <x>340</x>
-      <y>170</y>
+      <y>190</y>
       <w>210</w>
       <h>120</h>
     </coordinates>
@@ -63,7 +63,7 @@ isList : bool
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>270</x>
-      <y>50</y>
+      <y>70</y>
       <w>90</w>
       <h>170</h>
     </coordinates>
@@ -75,7 +75,7 @@ isList : bool
     <type>com.umlet.element.Relation</type>
     <coordinates>
       <x>270</x>
-      <y>190</y>
+      <y>210</y>
       <w>90</w>
       <h>180</h>
     </coordinates>
