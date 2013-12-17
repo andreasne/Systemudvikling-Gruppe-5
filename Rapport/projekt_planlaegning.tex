@@ -1,26 +1,26 @@
-\subsection*{Risici}
+\section*{Risici}
 \input{risici.tex}
 
 \newpage
 
-\subsection*{Projektplanlægning og styring}
-Iterationsplan og releaseplan, burndown chart
+\section*{Projektplanlægning og styring}
+Til planlægning og styring benytter vi iterationsplan med userstories og tasks samt releaseplan og burndown chart.
 
 \subsection*{Kvalitetssikring og test}
-Vi benytter pair programming og dokumentation. \\
-Vi har valgt ikke at benytte Unit testing, alfa/betatests og continuous integration fordi ...
+Vi benytter pair programming i det omfang det ellers giver mening. \\
+I det første 3 sprints har vi valgt ikke at benytte unit testing da vi i forvejen, på grund af teknologien, er pressede tidsmæssigt til at have funktionalitet færdigt til produkt reviews. \\ 
+Continuous integration ville blive for tidskrævende at sætte op. 
 
 \subsection*{Deployment og konfigurationsstyring}
-Omkring at opsætte og teste softwaren kundens systemer. Kan gøres med forskelligt mellemrum afhængigt af metode.
+Det tætteste vi kommer på deployment er at teste appen på en tablet.
 
 \newpage
 
 \subsection*{Velocity}
-
 Vi forventer at have 4 timer om dagen per mand i gruppen. Dvs. 8 mandetimer om dagen med 2 hold. \\
 4 dage første uge. \\
 4 dage anden uge. \\
-5 dage tredje uge. \\
+3 dage tredje uge. \\
 
 5 storypoint (standard) tager 8 mandetimer \\
 5/8 = 0,625 storypoint per mandetime \\
@@ -44,50 +44,25 @@ Vi forventer at have 4 timer om dagen per mand i gruppen. Dvs. 6 mandetimer om d
 
 \newpage
 
-\subsection*{Sprint 0}
-Sprint 0 benyttede vi til at lave produktbacklog, iterationsplan og burndown. Samt at lave spike på interfacet til foodmappet. \\
-Vi skulle også have lavet spike på database men nåede det ikke. \\ 
-I øvrigt var Bjarke var ikke tilstede hverken onsdag, torsdag og fredag pga. Grøn IT.
-
-\subsection*{Sprint 1 med XP}
-Til sprint 1 havde vi lavet et burndown som viste storypoints per mandedage. \\
-Vi benyttede pair-programming og fokuserede på de 2 user-stories: \\
-\begin{itemize}
-\item Kunden vil gerne have flere forslag til ingredienser frem på food map, ved at trykke på den midterste knap.
-\item Kunden vil gerne have adgang til database.
-\end{itemize}
-
-Hvor der indgik database design, oprettelse af tabeller og gui samt generel funktionalitet til foodmap ... \\
-Vi løb ind i et problem med at vores userstory for databasen var for bredt defineret, hvilket resulterede i at vi ikke kunne tegne vores burndown ned. Vi valgte derfor i starten af sprint 2 at dele den op. Derudover delte vi også andre store userstories op...
+\section*{Sprint 0}
+\input{sprint_0.tex}
 
 \newpage
 
-Backloggen så i sprint 1 sådan ud:
-%link til at genere tabeller: http://www.tablesgenerator.com/
-\begin{table}[h]
-\begin{tabular}{llll}
-Userstory                                                                                                                                                                    & \begin{tabular}[c]{@{}c@{}}Story-\\ points\end{tabular} & \begin{tabular}[c]{@{}c@{}}Mande-\\ timer\end{tabular} & Prioritet                \\ \hline
-\multicolumn{1}{|l}{\begin{tabular}[c]{@{}c@{}}Kunden vil gerne have flere forslag til\\ ingredienser frem på food map, ved at\\ trykke på den midterste knap.\end{tabular}} & \multicolumn{1}{|l}{3}                                  & \multicolumn{1}{|l}{3}                                 & \multicolumn{1}{|l|}{1}  \\ \hline
-\multicolumn{1}{|l}{\begin{tabular}[c]{@{}c@{}}Kunden vil have et animeret foodmap, \\ hvor ingredienser popper ud fra den\\ eksisterende ingrediensbobbel.\end{tabular}}    & \multicolumn{1}{|l}{}                                   & \multicolumn{1}{|l}{}                                  & \multicolumn{1}{|l|}{2}  \\ \hline
-\multicolumn{1}{|l}{\begin{tabular}[c]{@{}c@{}}Kunden vil gerne kunne fjerne og tilføje\\ ingredienser i food map.\end{tabular}}                                             & \multicolumn{1}{|l}{}                                   & \multicolumn{1}{|l}{}                                  & \multicolumn{1}{|l|}{3}  \\ \hline
-\multicolumn{1}{|l}{\begin{tabular}[c]{@{}c@{}}Kunden vil gerne have en liste over forskellige\\ opskrifter som er udvalgt af \\ de anførte ingredienser.\end{tabular}}      & \multicolumn{1}{|l}{}                                   & \multicolumn{1}{|l}{}                                  & \multicolumn{1}{|l|}{4}  \\ \hline
-\multicolumn{1}{|l}{\begin{tabular}[c]{@{}c@{}}Kunden vil gerne have hurtig søgeforslag \\ til ingredienser. (Performance)\end{tabular}}                                     & \multicolumn{1}{|l}{}                                   & \multicolumn{1}{|l}{}                                  & \multicolumn{1}{|l|}{5}  \\ \hline
-\multicolumn{1}{|l}{\begin{tabular}[c]{@{}c@{}}Kunden vil gerne have listet opskrifter med\\ billeder, beskrivelse, ingredienser og \\ tilberedning.\end{tabular}}           & \multicolumn{1}{|l}{}                                   & \multicolumn{1}{|l}{}                                  & \multicolumn{1}{|l|}{6}  \\ \hline
-\multicolumn{1}{|l}{\begin{tabular}[c]{@{}c@{}}Kunden vil gerne kunne få et hurtigt overblik\\  over indkøbs- og præperationsliste ved opskrift.\end{tabular}}               & \multicolumn{1}{|l}{}                                   & \multicolumn{1}{|l}{}                                  & \multicolumn{1}{|l|}{7}  \\ \hline
-\multicolumn{1}{|l}{\begin{tabular}[c]{@{}c@{}}Kunden vil gerne have en menu til navigering\\ i appen.\end{tabular}}                                                         & \multicolumn{1}{|l}{}                                   & \multicolumn{1}{|l}{}                                  & \multicolumn{1}{|l|}{8}  \\ \hline
-\multicolumn{1}{|l}{\begin{tabular}[c]{@{}c@{}}Kunden vil gerne kunne gemme indkøbsliste\\ i indkøbsoversigt.\end{tabular}}                                                  & \multicolumn{1}{|l}{}                                   & \multicolumn{1}{|l}{}                                  & \multicolumn{1}{|l|}{9}  \\ \hline
-\multicolumn{1}{|l}{\begin{tabular}[c]{@{}c@{}}Kunden vil gerne kunne gemme opskrifter i\\ favoritter.\end{tabular}}                                                         & \multicolumn{1}{|l}{}                                   & \multicolumn{1}{|l}{}                                  & \multicolumn{1}{|l|}{10} \\ \hline
-\multicolumn{1}{|l}{\begin{tabular}[c]{@{}c@{}}Kunden vil gerne have en særskilt indkøbsliste,\\  som kan tilgås fra hovedmenuen.\end{tabular}}                              & \multicolumn{1}{|l}{}                                   & \multicolumn{1}{|l}{}                                  & \multicolumn{1}{|l|}{11} \\ \hline
-\end{tabular}
-\end{table}
+\section*{Sprint 1 med XP}
+\input{sprint_1.tex}
 
+\newpage
 
 \subsection*{Sprint 2}
-Vi lavede en ny burndown som viste mandetimer per mandedage. \\
-Vi splittede vores userstories og produktbacklog bedre op, samt lavede nye estimater i både storypoint og mandetimer på hver enkelt userstory. Derudover satte vi også tidsestimater på vores tasks for bedre at være i stand til at afslutte tasks og at kunne tegne vores burndown ned. \\
-Sprintet kom i høj grad til at handle om userstories for at lave database samt kobling af database og foodmap.
+\input{sprint_2.tex}
 
-\subsection*{Product backlog}
-\input{productbacklog.tex}
-
+\newpage
 \subsection*{Sprint 3}
+\input{sprint_3.tex}
+
+
+
+
+\section*{Konklusion på sprints}
+
