@@ -40,9 +40,17 @@ public class RadialMenuActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		DBHelper dbHelperObj = new DBHelper(this);
+		//DBHelper dbHelperObj = new DBHelper(this);
 		
-		
+		//RelativeLayout rl = (RelativeLayout) findViewById(R.id.relativeLayoutTest);
+        //ListView listView1 = (ListView) findViewById(R.id.listView1);
+        
+        //String[] items = { "Milk", "Butter", "Yogurt", "Toothpaste", "Ice Cream" };
+        
+        
+        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+        
+        //listView1.setAdapter(adapter);
 		
 		/**
 		 * Fill up listView1
@@ -124,7 +132,6 @@ public class RadialMenuActivity extends Activity {
 				PieMenu.addMenuEntry(new Menu4());
 				PieMenu.addMenuEntry(new Menu5());
 				PieMenu.addMenuEntry(new Menu6());
-				PieMenu.addMenuEntry(new Menu7());
 /*				try {
 					Class<drawable> res = R.drawable.class;
 					Field field = res.getField("icon");
@@ -202,7 +209,6 @@ public class RadialMenuActivity extends Activity {
 				PieMenu.addMenuEntry(new Menu4());
 				PieMenu.addMenuEntry(new Menu5());
 				PieMenu.addMenuEntry(new Menu6());
-				PieMenu.addMenuEntry(new Menu7());
 				
 				
 				
@@ -242,15 +248,15 @@ public class RadialMenuActivity extends Activity {
 	    */
 	   
 	   // Meats
-	   public static class Menu1 implements RadialMenuEntry
+	   public class Menu1 extends Basket implements RadialMenuEntry
 	   {
 	      public String getName() { return "Menu1"; } 
-		  public String getLabel() { return "Meats"; } 
+		  public String getLabel() { return "Spice"; } 
 		  public int getIcon() { return 0; }
 	      public List<RadialMenuEntry> getChildren() { return null; }
 	      public void menuActiviated()
 	      {
-	    	  System.out.println( "Meats Activated");
+	    	  System.out.println( "Spice Activated");
 	      }
 	   }	
 	   
@@ -258,11 +264,11 @@ public class RadialMenuActivity extends Activity {
 	   public class Menu2 extends Basket implements RadialMenuEntry
 	   {
 	      public String getName() { return "Menu2 - Children"; }
-		  String ingre = ingredientObj.getIngredient();
-	      public String getLabel() { return ingre; }
+	      
+		  public String getLabel() { return "Vegetables"; }
 		  //"Vegetables"
 	      public int getIcon() { return 0; }
-	      private List<RadialMenuEntry> children = new ArrayList<RadialMenuEntry>( Arrays.asList( new StringOnly(), new IconOnly(), new StringAndIcon() ) );
+	      //private List<RadialMenuEntry> children = new ArrayList<RadialMenuEntry>( Arrays.asList( ) );
 	      public List<RadialMenuEntry> getChildren() { return null; }
 	      public void menuActiviated()
 	      {
@@ -289,15 +295,15 @@ public class RadialMenuActivity extends Activity {
 	   public class Menu4 implements RadialMenuEntry
 	   {
 	      public String getName() { return "Menu4 "; } 
-		  public String getLabel() { return "Sweets"; }
+		  public String getLabel() { return "Meat"; }
 	      public int getIcon() { return 0; }
 	      
 	      // list for children
-	      private List<RadialMenuEntry> children = new ArrayList<RadialMenuEntry>( Arrays.asList( new ItemCircle(), new Item1Circle(), new Item2Circle(), new Item3Circle()));
-	      public List<RadialMenuEntry> getChildren() { return children; }
+	      //private List<RadialMenuEntry> children = new ArrayList<RadialMenuEntry>( Arrays.asList( ));
+	      public List<RadialMenuEntry> getChildren() { return null; }
 	      public void menuActiviated()
 	      {
-	         System.out.println( "Sweets Activated");
+	         System.out.println( "Meat Activated");
 	      }
 	   }	
 
@@ -306,13 +312,13 @@ public class RadialMenuActivity extends Activity {
 	   public class Menu5 implements RadialMenuEntry
 	   {
 	      public String getName() { return "Menu5"; } 
-		  public String getLabel() { return "Milk"; }
+		  public String getLabel() { return "Dairy"; }
 	      public int getIcon() { return 0; }
-	      private List<RadialMenuEntry> children = new ArrayList<RadialMenuEntry>( Arrays.asList( new YellowCircle(), new GreenCircle(), new BlueCircle() ) );
-	      public List<RadialMenuEntry> getChildren() { return children; }
+	      //private List<RadialMenuEntry> children = new ArrayList<RadialMenuEntry>( Arrays.asList( ) );
+	      public List<RadialMenuEntry> getChildren() { return null; }
 	      public void menuActiviated()
 	      {
-	         System.out.println( "Milk products Activated");
+	         System.out.println( "Dairy products Activated");
 	      }
 	   }	
 	   
@@ -322,204 +328,70 @@ public class RadialMenuActivity extends Activity {
 	      public String getName() { return "Menu6"; } 
 	      
 	      //String ingr = ingredientObj.getIngredient();
-		  public String getLabel() { return "Grains"; }
-		  //"Grains"
-		  
+		  public String getLabel() { return "Starch"; }
 		  public int getIcon() { return 0; }
 	      
 	      // list for children
-	      private List<RadialMenuEntry> children = new ArrayList<RadialMenuEntry>( Arrays.asList( new ItemCircle(), new Item1Circle(), new Item2Circle(), new Item3Circle()));
-	      public List<RadialMenuEntry> getChildren() { return children; }
+	      //private List<RadialMenuEntry> children = new ArrayList<RadialMenuEntry>( Arrays.asList( );
+	      public List<RadialMenuEntry> getChildren() { return null; }
 	      public void menuActiviated()
 	      {
-	         System.out.println( "Grains Activated");
+	         System.out.println( "Starch Activated");
 	      }
 	   }	
-	   
-	   // Alcohol
-	   public class Menu7 implements RadialMenuEntry
-	   {
-		  public String getName() { return "Menu7"; } 
-		  public String getLabel() { return "Alcohol"; }
-	      public int getIcon() { return 0; }
-	      
-	      // list for children
-	      private List<RadialMenuEntry> children = new ArrayList<RadialMenuEntry>( Arrays.asList( new ItemCircle(), new Item1Circle(), new Item2Circle(), new Item3Circle()));
-	      public List<RadialMenuEntry> getChildren() { return children; }
-	      public void menuActiviated()
-	      {
-	         System.out.println( "Alcohol Activated");
-	      }
-	   }	
-	   
-	   
-	   
-	   
+
 	   /**
 	    *	Foodmap subitems
 	    */
 	   
-	   public class IconOnly implements RadialMenuEntry
-	   {
-	      public String getName() { return "IconOnly"; }
-		  public String getLabel() { return null; } 
-	      public int getIcon() { return 0; }
-	      public List<RadialMenuEntry> getChildren() { return null; }
-	      public void menuActiviated()
-	      {
-	         System.out.println( "IconOnly Menu Activated");
-	      }
-	   }
+	   /**
+	    * Spice items for foodmap categories
+	    * @author Bjarke
+	    *
+	    */
 	   
-	   
-	   public class StringAndIcon implements RadialMenuEntry
+	   public class ItemSpice1 extends Basket implements RadialMenuEntry
 	   {
-	      public String getName() { return "StringAndIcon"; }
-		  public String getLabel() { return "String"; } 
-	      public int getIcon() { return 0; }
-	      public List<RadialMenuEntry> getChildren() { return null; }
-	      public void menuActiviated()
-	      {
-	         System.out.println( "StringAndIcon Menu Activated");
-	      }
-	   }
-	   
-	   public class StringOnly implements RadialMenuEntry
-	   {
-	      public String getName() { return "StringOnly"; } 
-		  public String getLabel() { return "String\nOnly"; }
-	      public int getIcon() { return 0; }
-	      public List<RadialMenuEntry> getChildren() { return null; }
-	      public void menuActiviated()
-	      {
-	         System.out.println( "StringOnly Menu Activated");
-	      }
-	   }
-
-	   public class NewTestMenu implements RadialMenuEntry
-	   {
-	      public String getName() { return "NewTestMenu"; } 
-		  public String getLabel() { return "New\nTest\nMenu"; }
-	      public int getIcon() { return 0; }
-	      private List<RadialMenuEntry> children = new ArrayList<RadialMenuEntry>( Arrays.asList( new StringOnly(), new IconOnly(), new Item1Circle(), new Item2Circle(), new Item3Circle(), new ItemCircle() ) );
-	      public List<RadialMenuEntry> getChildren() { return children; }
-	      public void menuActiviated()
-	      {
-	         System.out.println( "New Test Menu Activated");
-	      }
-	   }
-
-
-	   
-	   
-	  
-	   
-	   public class YellowCircle implements RadialMenuEntry
-	   {
-	      public String getName() { return "YellowCircle"; } 
-		  public String getLabel() { return "Yellow"; }
-	      public int getIcon() { return 0; }
-	      public List<RadialMenuEntry> getChildren() { return null; }
-	      public void menuActiviated()
-	      {
-	         System.out.println( "Yellow Circle Activated");
-	      }
-	   }
-	   public class GreenCircle implements RadialMenuEntry
-	   {
-	      public String getName() { return "GreenCircle"; } 
-		  public String getLabel() { return "Green"; }
-	      public int getIcon() { return 0; }
-	      public List<RadialMenuEntry> getChildren() { return null; }
-	      public void menuActiviated()
-	      {
-	         System.out.println( "Green Circle Activated");
-	      }
-	   }
-	   public class BlueCircle implements RadialMenuEntry
-	   {
-	      public String getName() { return "BlueCircle"; } 
-		  public String getLabel() { return "Blue"; }
-	      public int getIcon() { return 0; }
-	      public List<RadialMenuEntry> getChildren() { return null; }
-	      public void menuActiviated()
-	      {
-	         System.out.println( "Blue Circle Activated");
-	      }
-	   }
-	   
-	   public class ItemCircle implements RadialMenuEntry
-	   {
-	      public String getName() { return "ItemCircle"; } 
-		  public String getLabel() { return "Item"; }
-	      public int getIcon() { return 0; }
-	      public List<RadialMenuEntry> getChildren() { return null; }
-	      public void menuActiviated()
-	      {
-	         System.out.println( "Item Circle Activated");
-	      }
-	      
-	   }
-	   
-	   public class Item1Circle extends Basket implements RadialMenuEntry
-	   {
-	      public String getName() { return "Item1Circle"; } 
-		  public String getLabel() { return "Item1"; }
-	      public int getIcon() { return 0; }
-	      public List<RadialMenuEntry> getChildren() { return null; }
-	      public void menuActiviated()
-	      {
-	         System.out.println( "Item1 Circle Activated");
-	         myBasket.add(getLabel());
-	      }
-	   }
-	   
-	   public class Item2Circle extends Basket implements RadialMenuEntry
-	   {
-	      public String getName() { return "Item2Circle"; } 
-		  public String getLabel() { return "Item2"; }
-	      public int getIcon() { return 0; }
-	      public List<RadialMenuEntry> getChildren() { return null; }
-	      public void menuActiviated()
-	      {
-	         System.out.println( "Item2 Circle Activated");
-	         myBasket.add("Item2");
-	      }
-	   }
-	   
-	   public class Item3Circle extends Basket implements RadialMenuEntry
-	   {
-		   Ingredient ingredientObj = new Ingredient();
-		      String ingredientName = ingredientObj.getIngredient();
-		       
+		  Ingredient cuminSeeds = getIngredientFromDbById(1);
+		  String cuminSeedsString = cuminSeeds.getIngredient(); 
 		   
-	      public String getName() { return ingredientName; } 
-		  public String getLabel() { return "Item3"; }
+		   
+	      public String getName() { return "IconOnly"; }
+		  public String getLabel() { return cuminSeedsString; } 
 	      public int getIcon() { return 0; }
-	      
-	      private List<RadialMenuEntry> children = new ArrayList<RadialMenuEntry>( Arrays.asList( new StringOnly(), new IconOnly(), new Item1Circle(), new Item2Circle(), new ItemCircle() ) );
-	      
-	      public List<RadialMenuEntry> getChildren() { return children; }
+	      public List<RadialMenuEntry> getChildren() { return null; }
 	      public void menuActiviated()
 	      {
-	         System.out.println( "Item3 Circle Activated");
-	         myBasket.add("Item3");
+	         System.out.println( "Cumin seeds");
 	      }
-	      
-	      
 	   }
+	   
+	   public class ItemSpice2 extends Basket implements RadialMenuEntry
+	   {
+		  Ingredient corianderSeeds = getIngredientFromDbById(2);
+		  String corianderSeedsString = corianderSeeds.getIngredient(); 
+		   
+		   
+	      public String getName() { return "IconOnly"; }
+		  public String getLabel() { return corianderSeedsString; } 
+	      public int getIcon() { return 0; }
+	      public List<RadialMenuEntry> getChildren() { return null; }
+	      public void menuActiviated()
+	      {
+	         System.out.println( "Coriander seeds");
+	      }
+	   }
+	  
+	  
 	   
 	   public class Basket 
 	   {
 	      IngredientBasket obj = new IngredientBasket();
 	      public ArrayList<String> myBasket = obj.getIngredientBasket();
 	      
-	      Ingredient ingredientObj = getIngredientFromDbById(1);
+
 	      
 	   }
-	   
-	   
-	   
 	   
 	   /*
 	    * Database access methods
