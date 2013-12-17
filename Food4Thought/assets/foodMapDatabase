@@ -1,6 +1,0 @@
-BEGIN TRANSACTION;
-CREATE TABLE Ingredient (id INTEGER PRIMARY KEY, Category TEXT, name_ingredient TEXT);
-INSERT INTO Ingredient VALUES(1,'Milk products','IS');
-CREATE TABLE Ingredientrecipe(idingredient INTEGER, idrecipe INTEGER, quantity TEXT, is_list BOOLEAN, FOREIGN KEY(idingredient) REFERENCES Ingredient(id), FOREIGN KEY(idrecipe) REFERENCES Recipe(id));
-CREATE TABLE Recipe (id INTEGER PRIMARY KEY, name_recipe TEXT, description TEXT, preparation TEXT, is_favorite BOOLEAN);
-COMMIT;
