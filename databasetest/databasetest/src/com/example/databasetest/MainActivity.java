@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
         
         
         Ingredient ingredientObj = getIngredientFromDbById(1);
@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
         Recipe recipeObj = getRecipeFromDbById(1);
         String recipeName = recipeObj.getName();
         
-        RelativeLayout rl = (RelativeLayout) findViewById(R.id.rl);
+        //RelativeLayout rl = (RelativeLayout) findViewById(R.id.rl);
         ListView listView1 = (ListView) findViewById(R.id.listView1);
         
         String[] items = { "Milk", "Butter", "Yogurt", "Toothpaste", "Ice Cream", ingredientName, recipeName };
