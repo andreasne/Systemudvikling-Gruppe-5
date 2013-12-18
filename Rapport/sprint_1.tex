@@ -10,7 +10,8 @@ Det svarer til: 5 storypoints / 8 mandetimer = 0,625 storypoint per mandetime \\
 \subsection*{Planlægning}
 Til sprintet afbillede vi vores burndown som en funktion af storypoints per mandedage. \\
 
-\includegraphics[scale=0.001]{includes/billeder/IMAG0021.jpg}
+% indsæt burndown her
+%
 
 I sprintet fokuserede vi på 2 userstories:
 \begin{itemize}
@@ -25,6 +26,7 @@ I disse userstories omhandlede tasks med:
 \item gui samt generel funktionalitet til foodmap
 \end{itemize}
 
+\newpage
 
 Backloggen så i sprint 1 sådan ud:
 %link til at genere tabeller: http://www.tablesgenerator.com/
@@ -46,7 +48,7 @@ Userstory                                                                       
 \end{table}
 
 \subsection*{Xp praktikker}
-I sprint 1 benyttede vi XP praktikkerne: planning poker, par programmering, kollektivt kode ejerskab, refactoring, kodestandarder, metafor og simpelt design. \\
+I sprint 1 benyttede vi XP praktikkerne: stand-up meeting, planning poker, par programmering, kollektivt kode ejerskab, refactoring, kodestandarder, story board, kanban begrænsninger, metafor og simpelt design. \\
 
 Vi lavede planning poker med storypoints til at vurdere størrelsen af userstories for senere hen at udregne vores velocity. \\
 Vi arbejdede med par programmering i 2 grupper, hvor vi også i høj grad havde den af grupperne med en mand i til at undersøge teknologien. Vi forsøgte så vidt muligt at få alle ind over koden hvor vi i forvejen havde aftalt at bruge Java camelcasing samt at refactorer koden med KISS som mål.
@@ -55,8 +57,9 @@ Derudover vi benyttede domæne model og database schema til design for at få enig
 Mht. kvalitetssikring valgte vi ikke at benytte test-first eller unit testing eftersom vi på dette tidspunkt ikke rigtigt havde noget relevant at teste på samt at vi prioriterede funktionalitet.
 
 
+
 \subsection{Produkt review}
-Til reviewet i starten af sprint 2 præsenterede vi vores grafiske brugergrænseflade: 
+Til reviewet i starten af sprint 2 præsenterede vi vores grafiske brugergrænseflade vi havde på nuværende tidspunkt ikke 
 % indsæt screenshot her.
  
 \subsubsection*{Konklusion af review}
@@ -64,11 +67,35 @@ At vi havde et lovende interface med statisk funktionalitet, men uden database a
 
 
 \subsection*{Retrospektive}
-Vi løb ind i et problem med at vores userstory for databasen, hvilken var for bredt defineret. Dette resulterede i at vi ikke kunne tegne vores burndown ned overhovedet. 
+Sprint 1 har ikke forløbet som forventet vi har ikke fået et brændt et eneste storypoint af, da vi ikke har haft for store userstories og vi har ikke lagt op til at kunne brænde på tasks. Endvidere har vi ikke nået at programmerer det vi havde forventet. Dette har været pga. vores manglende erfaring indenfor android og vi har derfor brugt for lang tid på at forsøge at sætte database op. Selvom vi har beregnet spikes ind i vores userstories har vi ikke lavet et realistisk estimat af dette.\\
+
+Vi kan derfor konkluderer at sprint 1 har fejlet pga. for store userstories, der er svære at repræsenterer på vores burndown og pga. dårlig estimering af userstories, som er et mén fra vores dårlige erfaring med android. Vi har estimeret opsætning af database ud fra vores tidligere erfaring med opsætning af database i nye platformer.
+
 
 \subsubsection*{Ting der gik godt}
-Par programmering \\
-Kollektivt kode ejerskab.
+I sprint 1 benyttede vi XP praktikkerne: stand-up meeting, planning poker, par programmering, kollektivt kode ejerskab, refactoring, kodestandarder, løbende integration, story board, kanban begrænsninger, metafor og simpelt design. \\
+
+
+\textsf{Planning Poker:}\\
+Vi har brugt planning poker til at estimerer de enkelte userstories. I vores situation kom vi til at undervuderer vores userstories men det mener vi ikke selve praktikken skal have skyld for.\\
+\textsf{Par programmering:}\\
+Vi har i høj grad brugt par programmering hvor vi har siddet i 2 grupper. 1 med 2 personer og 1 med 1 person.\\
+\textsf{Kollektivt kode ejerskab:}\\
+Vi har brugt kollektivt kodeejerskab dog ikke helt som xp foreskriver, hvor man f.eks. bytter på et bestemt tidspunkt på dagen, men i den forstand at vi er en lille gruppe og vi har alle måttet sætte os ind i tingene for at kunde kode i android.\\
+\textsf{Stand-up meeting:}\\
+Vi har holdt standup meeting hver eneste morgen for vuderer hvor langt de enkelte grupper er nået i kodeningsprocessen. Hvorefter vi har kunne vurderer hvorvidt det har været muligt at blive færdig med de enkelte tasks.\\
+\textsf{Refactoring:}\\
+Refactoring har vi brugt i stor grad idet de enkelte sprints også har været en læringsprocess. Bla. har vi måttet ændre vores tilgang til hvordan databasen skulle sættes op. I begyndelsen kreedrede vi databasen i selve koden, men vi blev senere klar over at vi blev nødt til at lave insert i databasen i selve koden og at dette ville skabe kæmpe uoverskuelige store filer. Derfor blev vi nødt til at sætte databasen op i sqlite først, ligge den ind i vores android projekt og kalde vores data derfra.\\
+\textsf{Metafor:}\\
+Vi har undervejs blevet enige om hvilken terminologi der skulle bruge i vores projekt. Bla. har vi defineret noget af dette på vores domænemodel og database diagram.\\
+\textsf{Story board:}\\
+Vi har brugt story board for at have overblik over hvor langt vi er nået med de enkelte tasks.\\
+\textsf{Simpelt Design:}\\
+Vi har kun implementeret den nødvendige kode.\\
+\textsf{Kodestandarder:}\\
+Vi har defineret kodestandarder i sprint 0 for at kunne fremvise pæn kode.\\
+
+
 
 
 
@@ -76,8 +103,9 @@ Kollektivt kode ejerskab.
 Vores opsplitning af user stories: \\
 Vores user stories skal splittes mere og bedre op, så vi er istand til at tegne burndown ned.
 Burndown som er sammensat ved point og dage.
-skriv logbog hver dag.
-Korrigere for fravær.
+Skriv logbog en gang om ugen:\\
+
+Korrigere for fravær.\\
 
 
 Andet
@@ -86,8 +114,10 @@ Vi lavede ikke test-first - Dette var ikke muligt da vi ikke er erfarne med andr
 Ting vi fortsætter med
 Vi fortsætter med pair-progamming til de mere komplekse tasks
 
-Ting vi vil forbedre
+Ting vi vil forbedre:
 Burndown sammensat af timer og dage, i stedet for point.
 Opdeling af user stories
 Vil lave burndown af tasks istedet for user stories
 Vores accept tests.
+
+\subsection*{Sprint Konklusion}
