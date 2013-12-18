@@ -163,6 +163,8 @@ public class DBHelper extends SQLiteOpenHelper{
 		return ingredientObj;
 	}
 	
+	
+	
 	public Recipe getRecipe(long id_recipe){
 		Recipe recipeObj = new Recipe();
 		
@@ -179,6 +181,23 @@ public class DBHelper extends SQLiteOpenHelper{
 		
 	}
 	
-	
+	public ArrayList<Ingredient> getAllIngredients(){
+		//SQLiteDatabase db = this.getReadableDatabase();
+		
+		Ingredient ingredientObj = new Ingredient();		
+		ArrayList<Ingredient> ingredientList = new ArrayList<Ingredient>();
+		
+		Cursor c = myDataBase.rawQuery("SELECT * FROM Ingredient", null);
+		
+		while (c.moveToNext()){
+			//ingredientObj.setId(c.getInt(c.getColumnIndex("_id")));
+			ingredientObj.setCategory(c.getString(c.getColumnIndex("category")));
+			ingredientObj.setIngredient(c.getString(c.getColumnIndex("name_ingredient")));
+			
+			ingredientList.add(ingredientObj);
+		}
+		
+		return ingredientList;
+	}
 
 }
