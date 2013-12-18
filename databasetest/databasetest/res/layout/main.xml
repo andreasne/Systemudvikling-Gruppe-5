@@ -4,10 +4,10 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:id="@+id/mainLinearLayoutTest"
+    android:background="@color/black"
     >
     <RelativeLayout android:layout_width="fill_parent" android:id="@+id/relativeLayoutTest" android:layout_height="fill_parent">
         <ImageView android:id="@+id/imageView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentLeft="true"></ImageView>
-        <TextView android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceLarge" android:id="@+id/textView1" android:layout_height="wrap_content" android:text="Click anywhere on the screen..." android:layout_centerVertical="true" android:layout_centerHorizontal="true"></TextView>
 
         <ListView
             android:id="@+id/listView1"
