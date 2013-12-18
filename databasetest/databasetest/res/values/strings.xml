@@ -12,4 +12,8 @@
 	<item>List 3</item>
 	<item>List 4</item>
 	</string-array>
+	
+	<string name="EnterPays_atomPay_nameHint">nazwa platnosci</string>
+    <string name="EnterPays_TextView_ZeroValue">0</string>
+    <string name="EnterPays_addPayment">Add Payment</string>
 </resources>

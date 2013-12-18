@@ -46,7 +46,7 @@ public class RadialMenuActivity extends Activity {
 		//RelativeLayout rl = (RelativeLayout) findViewById(R.id.relativeLayoutTest);
         //ListView listView1 = (ListView) findViewById(R.id.listView1);
         
-        //String[] items = { "Milk", "Butter", "Yogurt", "Toothpaste", "Ice Cream" };
+        //String[] items = { "Milk", "Butter" };
         
         
         //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
@@ -92,6 +92,16 @@ public class RadialMenuActivity extends Activity {
 		addContentView(ll, p);*/
 
 
+		ListView listView1 = (ListView) findViewById(R.id.listView1);
+        
+        String[] items = { "Milk", "Butter", "something1", "something2", "something3" };
+        
+        
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+        
+        listView1.setAdapter(adapter);
+		
+		
 		//Button testButton = (Button) this.findViewById(R.id.button1);
 		//testButton.setOnClickListener(new OnClickListener() {
 			//public void onClick(View v) {
@@ -121,7 +131,7 @@ public class RadialMenuActivity extends Activity {
 				int yLayoutSize = ll.getHeight();				
 				PieMenu.setSourceLocation(xLayoutSize,yLayoutSize);
 				PieMenu.setIconSize(15, 30);
-				PieMenu.setTextSize(13);				
+				PieMenu.setTextSize(10);				
 				
 				PieMenu.setCenterCircle(new Close());
 				PieMenu.addMenuEntry(new Menu1());
@@ -150,7 +160,6 @@ public class RadialMenuActivity extends Activity {
 				// pieMenu.addMenuEntry( new FileMenu() );
 
 				// pieMenu.show();
-
 			}
 		
 		//	});

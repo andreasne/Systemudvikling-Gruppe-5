@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ListViewActivity"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:id="@+id/mainLinearLayoutTest"
-    android:background="@color/black"
     >
-    <RelativeLayout android:layout_width="fill_parent" android:id="@+id/relativeLayoutTest" android:layout_height="fill_parent">
+    <!--  android:background="@color/black" -->
+    <RelativeLayout 
+        android:layout_width="fill_parent" 
+        android:id="@+id/relativeLayoutTest"
+        android:layout_height="fill_parent"
+        >
+        
+        
         <ImageView android:id="@+id/imageView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentLeft="true"></ImageView>
 
         <ListView
             android:id="@+id/listView1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="0dp"
-            android:layout_marginTop="350dp"
-            android:layout_toRightOf="@+id/imageView1" >
+            android:layout_below="@id/imageView1"
+            tools:listitem="@layout/atom_pay_list_item"
+            android:layout_marginTop="260dp" >
         </ListView>
 
     </RelativeLayout>
