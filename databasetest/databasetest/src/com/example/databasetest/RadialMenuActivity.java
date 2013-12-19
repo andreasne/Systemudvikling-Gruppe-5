@@ -34,6 +34,8 @@ public class RadialMenuActivity extends Activity {
 	private RadialMenuWidget PieMenu;
 	private LinearLayout ll;
 	//private TextView tv;
+	ArrayAdapter<String> adapter;
+	Basket basket = new Basket();
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -85,7 +87,7 @@ public class RadialMenuActivity extends Activity {
         String[] items = { "Milk" };
         
        
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
         
         listView1.setAdapter(adapter);
 		       
@@ -154,6 +156,7 @@ public class RadialMenuActivity extends Activity {
 		
 		//	});
 		//}
+
 	
 		public boolean onTouchEvent(MotionEvent e) {
 			int state = e.getAction();
@@ -204,19 +207,31 @@ public class RadialMenuActivity extends Activity {
 				PieMenu.addMenuEntry(new Menu5());
 				PieMenu.addMenuEntry(new Menu6());
 				
-				/*
-				Basket basket = new Basket();
 				
-				ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, basket.myBasket);
-		        
+				basket.myBasket.add("ssasasf");
+				
+				//ListView listView1 = (ListView) findViewById(R.id.listView1);
 				ListView listView1 = (ListView) findViewById(R.id.listView1);
-		        listView1.setAdapter(adapter);
-				 */
+				
+				// ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, basket.myBasket);
+				
+				PieMenu.setOnClickListener(new OnClickListener() {
+					
+					@Override
+					public void onClick(View arg0) {
+						adapter = new ArrayAdapter<String>(getApplication(), android.R.layout.simple_list_item_1, basket.myBasket);
+						adapter.notifyDataSetChanged();
+						
+					}
+				});
+				listView1.setAdapter(adapter);
 				
 				ll.addView(PieMenu);
 			}
+			
 			return true;
 		}
+		
 
 		// Middle button
 	   public class Close implements RadialMenuEntry
@@ -786,11 +801,13 @@ public class RadialMenuActivity extends Activity {
 	      {
 	         System.out.println("panko");
 	         
-	         /*
-	         ListView listView1 = (ListView) findViewById(R.id.listView1);
-		     
 	         myBasket.add(pankoString);
+	      
+	         /*
+	         
+		     ListView listView1 = (ListView) findViewById(R.id.listView1);
 	         ArrayAdapter<String> adapter = new ArrayAdapter<String>(RadialMenuActivity.this, android.R.layout.simple_list_item_1, myBasket);
+	         adapter.notifyDataSetChanged();
 	         listView1.setAdapter(adapter);
 	         */
 	      }
