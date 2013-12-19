@@ -6,10 +6,8 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 import db.DBHelper;
 import sqlite.model.*;
-
 import com.example.databasetest.RadialMenuWidget.RadialMenuEntry;
 
 import android.app.Activity;
@@ -37,7 +35,6 @@ public class RadialMenuActivity extends Activity {
 	private LinearLayout ll;
 	//private TextView tv;
 	
-	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -53,15 +50,6 @@ public class RadialMenuActivity extends Activity {
         
         //listView1.setAdapter(adapter);
 		
-		/**
-		 * Fill up listView1
-		 */
-		
-		//Ingredient ingredientObj = getIngredientFromDbById(1);
-        //String ingredientName = ingredientObj.getIngredient();
-        
-        //Recipe recipeObj = getRecipeFromDbById(1);
-        //String recipeName = recipeObj.getName();
         
       //------------------------------------------------------------------------------------------
         // Generating Pie view
@@ -94,13 +82,13 @@ public class RadialMenuActivity extends Activity {
 
 		ListView listView1 = (ListView) findViewById(R.id.listView1);
         
-        String[] items = { "Milk", "Butter", "something1", "something2", "something3" };
+        String[] items = { "Milk" };
         
-        
+       
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
         
         listView1.setAdapter(adapter);
-		
+		       
 		
 		//Button testButton = (Button) this.findViewById(R.id.button1);
 		//testButton.setOnClickListener(new OnClickListener() {
@@ -155,6 +143,8 @@ public class RadialMenuActivity extends Activity {
 				ll.addView(PieMenu);
 
 				
+				
+				
 				// PieMenuImpl pieMenu = new PieMenuImpl();
 
 				// pieMenu.addMenuEntry( new FileMenu() );
@@ -164,8 +154,7 @@ public class RadialMenuActivity extends Activity {
 		
 		//	});
 		//}
-
-
+	
 		public boolean onTouchEvent(MotionEvent e) {
 			int state = e.getAction();
 			int eventX = (int) e.getX();
@@ -215,9 +204,14 @@ public class RadialMenuActivity extends Activity {
 				PieMenu.addMenuEntry(new Menu5());
 				PieMenu.addMenuEntry(new Menu6());
 				
+				/*
+				Basket basket = new Basket();
 				
-				
-				
+				ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, basket.myBasket);
+		        
+				ListView listView1 = (ListView) findViewById(R.id.listView1);
+		        listView1.setAdapter(adapter);
+				 */
 				
 				ll.addView(PieMenu);
 			}
@@ -251,7 +245,7 @@ public class RadialMenuActivity extends Activity {
 	   // Spice
 	   public class Menu1 extends Basket implements RadialMenuEntry
 	   {
-	      public String getName() { return "Menu1"; } 
+	      public String getName() { return "Spice"; } 
 		  public String getLabel() { return "Spice"; } 
 		  public int getIcon() { return 0; }
 		  private List<RadialMenuEntry> children = new ArrayList<RadialMenuEntry>( 
@@ -262,13 +256,14 @@ public class RadialMenuActivity extends Activity {
 	      public void menuActiviated()
 	      {
 	    	  System.out.println( "Spice ingredients");
+	    	  
 	      }
 	   }	
 	   
 	   // Vegetables
 	   public class Menu2 extends Basket implements RadialMenuEntry
 	   {
-	      public String getName() { return "Menu2 - Children"; }
+	      public String getName() { return "Vegetables"; }
 		  public String getLabel() { return "Vegetables"; }
 	      public int getIcon() { return 0; }
 	      private List<RadialMenuEntry> children = new ArrayList<RadialMenuEntry>( 
@@ -287,7 +282,7 @@ public class RadialMenuActivity extends Activity {
 	   // Fruits
 	   public class Menu3 implements RadialMenuEntry
 	   {
-	      public String getName() { return "Menu3 - No Children"; }
+	      public String getName() { return "Fruits"; }
 		  public String getLabel() { return "Fruits"; } 
 	      public int getIcon() { return 0; }
 	      private List<RadialMenuEntry> children = new ArrayList<RadialMenuEntry>( 
@@ -303,7 +298,7 @@ public class RadialMenuActivity extends Activity {
 	   // Meat
 	   public class Menu4 implements RadialMenuEntry
 	   {
-	      public String getName() { return "Menu4 "; } 
+	      public String getName() { return "Meat "; } 
 		  public String getLabel() { return "Meat"; }
 	      public int getIcon() { return 0; }
 	      
@@ -324,7 +319,7 @@ public class RadialMenuActivity extends Activity {
 	   // Milk products
 	   public class Menu5 implements RadialMenuEntry
 	   {
-	      public String getName() { return "Menu5"; } 
+	      public String getName() { return "Dairy"; } 
 		  public String getLabel() { return "Dairy"; }
 	      public int getIcon() { return 0; }
 	      
@@ -342,7 +337,7 @@ public class RadialMenuActivity extends Activity {
 	   // Grains
 	   public class Menu6 extends Basket implements RadialMenuEntry
 	   {
-	      public String getName() { return "Menu6"; } 
+	      public String getName() { return "Starch"; } 
 	      
 		  public String getLabel() { return "Starch"; }
 		  public int getIcon() { return 0; }
@@ -736,7 +731,7 @@ public class RadialMenuActivity extends Activity {
 	      public void menuActiviated()
 	      {
 	         System.out.println("burger buns");
-	         
+	         myBasket.add(burgerBunsString);
 	      }
 	   }
 	   
@@ -754,7 +749,7 @@ public class RadialMenuActivity extends Activity {
 	      public void menuActiviated()
 	      {
 	         System.out.println("corn chips");
-	         
+	         myBasket.add(cornChipsString);
 	      }
 	   }
 	   
@@ -772,7 +767,7 @@ public class RadialMenuActivity extends Activity {
 	      public void menuActiviated()
 	      {
 	         System.out.println("flour");
-	         
+	         myBasket.add(flourString);
 	      }
 	   }
 	   
@@ -791,6 +786,13 @@ public class RadialMenuActivity extends Activity {
 	      {
 	         System.out.println("panko");
 	         
+	         /*
+	         ListView listView1 = (ListView) findViewById(R.id.listView1);
+		     
+	         myBasket.add(pankoString);
+	         ArrayAdapter<String> adapter = new ArrayAdapter<String>(RadialMenuActivity.this, android.R.layout.simple_list_item_1, myBasket);
+	         listView1.setAdapter(adapter);
+	         */
 	      }
 	   }
 	   
@@ -808,6 +810,9 @@ public class RadialMenuActivity extends Activity {
 		   IngredientBasket obj = new IngredientBasket();
 		   public ArrayList<String> myBasket = obj.getIngredientBasket();
 	
+		   
+		   //public void getBasket 
+		   
 		   ArrayList<Ingredient> allIngredients = getAllIngredientsFromDb();
 	      
 		   // Meat ingredients list
