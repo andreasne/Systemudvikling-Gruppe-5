@@ -1,14 +1,24 @@
 package sqlite.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Ingredient {
+public class Ingredient implements Serializable {
+	
+	
 	
 	private String category;
 	private String name_ingredient;
 	private ArrayList<IngredientRecipe> ingredientRecipeList;
+
+	public Ingredient(){
+		
+	}
 	
-	
+	public Ingredient(String name_ingredient, String category){
+		this.name_ingredient = name_ingredient;
+		this.category = category;
+	}
 	
 	public ArrayList<IngredientRecipe> getIngredientRecipeList() {
 		return ingredientRecipeList;

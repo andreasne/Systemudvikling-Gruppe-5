@@ -6,10 +6,11 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 import db.DBHelper;
 import sqlite.model.*;
-import com.example.databasetest.RadialMenuWidget.RadialMenuEntry;
 
+import com.example.databasetest.RadialMenuWidget.RadialMenuEntry;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -35,11 +36,17 @@ public class RadialMenuActivity extends Activity {
 	private LinearLayout ll;
 	//private TextView tv;
 	ArrayAdapter<String> adapter;
+	private IngredientAdapter ingredientAdapter;
 	Basket basket = new Basket();
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		
+		
+		//setupListViewAdapter();
+		//setupAddIngredientButton();
 		
 		
 		//RelativeLayout rl = (RelativeLayout) findViewById(R.id.relativeLayoutTest);
@@ -90,8 +97,7 @@ public class RadialMenuActivity extends Activity {
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
         
         listView1.setAdapter(adapter);
-		       
-		
+			
 		//Button testButton = (Button) this.findViewById(R.id.button1);
 		//testButton.setOnClickListener(new OnClickListener() {
 			//public void onClick(View v) {
@@ -143,7 +149,7 @@ public class RadialMenuActivity extends Activity {
 				//ll.addView(tv);
 				
 				ll.addView(PieMenu);
-
+				
 				
 				
 				
@@ -206,33 +212,40 @@ public class RadialMenuActivity extends Activity {
 				PieMenu.addMenuEntry(new Menu4());
 				PieMenu.addMenuEntry(new Menu5());
 				PieMenu.addMenuEntry(new Menu6());
-				
-				
-				basket.myBasket.add("ssasasf");
-				
-				//ListView listView1 = (ListView) findViewById(R.id.listView1);
-				ListView listView1 = (ListView) findViewById(R.id.listView1);
-				
-				// ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, basket.myBasket);
-				
-				PieMenu.setOnClickListener(new OnClickListener() {
-					
-					@Override
-					public void onClick(View arg0) {
-						adapter = new ArrayAdapter<String>(getApplication(), android.R.layout.simple_list_item_1, basket.myBasket);
-						adapter.notifyDataSetChanged();
-						
-					}
-				});
-				listView1.setAdapter(adapter);
-				
+
 				ll.addView(PieMenu);
+				
+				
+				
 			}
 			
 			return true;
 		}
 		
 
+		
+		private void setupListViewAdapter() {
+			ingredientAdapter = new IngredientAdapter(RadialMenuActivity.this, R.layout.atom_pay_list_item, new ArrayList<Ingredient>());
+			ListView atomPaysListView = (ListView)findViewById(R.id.listView1);
+			atomPaysListView.setAdapter(adapter);
+		}
+		
+		
+		private void setupAddIngredientButton() {
+			PieMenu.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					ingredientAdapter.insert(new Ingredient("",""), 0);
+				}
+			});
+		}
+		
+		
+		
+		
+		
+		
 		// Middle button
 	   public class Close implements RadialMenuEntry
 	   {
@@ -794,7 +807,14 @@ public class RadialMenuActivity extends Activity {
 		   
 		   
 	      public String getName() { return "panko"; }
-		  public String getLabel() { return pankoString; } 
+	      
+	      /*
+		  public static void setOnClickListener(OnClickListener onClickListener) {
+			// TODO Auto-generated method stub
+			
+		}
+		*/
+		public String getLabel() { return pankoString; } 
 	      public int getIcon() { return 0; }
 	      public List<RadialMenuEntry> getChildren() { return null; }
 	      public void menuActiviated()

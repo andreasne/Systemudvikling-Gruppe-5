@@ -217,7 +217,7 @@ public class RadialMenuWidget extends View {
 							
 						//If outer ring is not enabled, then executes event
 						} else {
-							Toast.makeText(getContext(), menuEntries.get(i).getName() + " pressed.", Toast.LENGTH_SHORT).show();
+							Toast.makeText(getContext(), menuEntries.get(i).getName() + " category pressed.", Toast.LENGTH_SHORT).show();
 							menuEntries.get(i).menuActiviated();
 							
 							//Figures out how many outer rings
@@ -238,7 +238,7 @@ public class RadialMenuWidget extends View {
 				for (int i = 0; i < Wedges2.length; i++) {
 					Wedge f = Wedges2[i];
 					if (f == selected2) {
-					Toast.makeText(getContext(), wedge2Data.getChildren().get(i).getName() + " pressed.", Toast.LENGTH_SHORT).show();
+					Toast.makeText(getContext(), wedge2Data.getChildren().get(i).getName() + " ingredient pressed.", Toast.LENGTH_SHORT).show();
 					animateOuterIn = true;  //sets Wedge2Shown = false;
 					enabled = null;
 					selected = null;
