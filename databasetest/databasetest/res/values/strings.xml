@@ -6,12 +6,6 @@
     <string name="hello_world">Hello world!</string>
 	<string name="title_activity_main">MainActivity</string>
 	<color name="black">#000000</color>
-	<string-array name="str">
-	<item>List 1</item>
-	<item>List 2</item>
-	<item>List 3</item>
-	<item>List 4</item>
-	</string-array>
 	
 	<string name="EnterPays_atomPay_nameHint">nazwa platnosci</string>
     <string name="EnterPays_TextView_ZeroValue">0</string>
