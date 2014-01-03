@@ -15,6 +15,12 @@
 %\setcounter sætter hvilket level i depth tableofcontents skal vise til, default er 3: altså subsubsection. 
 %Level -1: \part, 0: \chapter, 1: \section, 2: \subsection, 3: \subsubsection, 4: \paragraph*
 %\setcounter{tocdepth}{3}
+
+\includepdf{./titelblad/titelblad.pdf}
+\input{preface.tex}
+
+\newpage
+
 \tableofcontents
 
 \newpage
@@ -29,7 +35,7 @@
 \input{teori.tex}
 
 
-\part{Projektet}
+\part{Ideudvikling}
 \input{ideudvikling.tex}
 
 \newpage
@@ -53,12 +59,13 @@
 \subsection*{Future works}
 
 \newpage
+\part{Bibliografi}
 \bibliography{bibliografi}
 \bibliographystyle{plain}
 \appendix
 
 \newpage
 \part{Appendix}
-\input{./appendix/appendix.tex}
+\input{appendix.tex}
 
 \end{document}

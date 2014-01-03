@@ -1,0 +1,95 @@
+% Dette er LaTeX-versionen af titelbladet for tek-nat-basis-rapporter 2004 efterår
+% Filen kr¾ver:
+% Universitetets logo:  aau-logo.png (for LaTeX) eller aau-logo.ps (for LaTeX)
+% Synopsis: En fil ved navn synopsis.tex
+
+% Udarbejdet af: Hans HŸttel (hans@cs.auc.dk) 21. maj 2003
+% Rettet af Morten Christophersen (mortench@tnb.aau.dk) 30. nov 2004(ændret til nyt design 2004 efterår)
+
+\documentclass[11pt]{article}
+\ifx\pdfoutput\undefined 
+\usepackage[dvips]{graphicx}
+\else
+\usepackage[pdftex]{graphicx} 
+\usepackage{type1cm} \fi
+    \usepackage[ansinew]{inputenc}
+    \usepackage{a4}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{url}
+\begin{document} 
+\thispagestyle{empty}
+\begin{titlepage}
+\begin{nopagebreak}
+{\samepage 
+\begin{tabular}{r}
+\parbox{\textwidth}{  \raisebox{-7mm}{\includegraphics[height=5.0cm]{ucn_logo.png}}
+\hfill \parbox{4.9cm}{\begin{tabular}{l}
+{\sf\small \textbf{University College Nordjylland}}\\
+{\sf\small  \textbf{Computer Science}} \\
+{\sf\small Sofiendalsvej 60} \\
+{\sf\small Telephone: } \\
+{\sf\small Fax:} \\
+{\sf\small \color{blue}\underline{\url{http://www.ucn.dk}}\color{black}}
+\end{tabular}}}
+\\
+\end{tabular}
+
+\begin{tabular}{cc}
+\parbox{7cm}{
+\begin{description}
+
+\item {\bf Title:} 
+
+Food4Thought
+  
+\item {\bf Theme:} 
+
+Android \\
+System udvikling
+
+\end{description}
+
+\parbox{8cm}{
+
+\begin{description}
+\item {\bf Project period:}\\
+   3rd Semester, Spring Semester 2013\\
+  \hspace{4cm}
+\item {\bf Project Group:}\\
+  Group 2.\\
+  \hspace{4cm}
+\item {\bf Members:}\\
+Andreas Nørskov\\
+Bjarke T. Carstens \\
+Stephan Grooss
+  \hspace{2cm}
+\item {\bf Supervisor:}\\
+ Gunhild Marie Andersen\\
+ Mogens Holm Iversen
+\end{description}
+}
+\begin{description}
+\item {\bf Publications:} 3
+\item {\bf Total pages:} 43
+\item {\bf Appendix pages:} 8.
+\item {\bf Ended at:} \today
+\end{description}
+\vfill } &
+\parbox{7cm}{
+  \vspace{.15cm}
+  \hfill 
+  \begin{tabular}{l}
+  {\bf Case abstract:}\bigskip \\
+  \fbox{
+    \parbox{6.5cm}{\bigskip
+     {\vfill{\small \input{synopsis}
+     \bigskip}}
+     }}
+   \end{tabular}}
+\end{tabular}}
+\\ \\
+%\noindent{\footnotesize\emph{The content of the report is freely available, but publication (with source-reference) is only possible with an agreement from the authors.}}
+\end{nopagebreak}
+\end{titlepage}
+\end{document}
