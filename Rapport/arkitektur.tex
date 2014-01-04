@@ -1,5 +1,6 @@
-Appen tilgår en gratis tilgængelig API med over 200.000 opskrifter. \\
-Arkitektur afsnittet omhandler hvor vi ligger databasen; lokalt eller på server? Hvordan og hvor ofte vi opdaterer den?
+%Arkitektur afsnittet omhandler hvor vi ligger databasen; lokalt eller på server? Hvordan og hvor ofte vi opdaterer den? \\
+Vi har valgt at arkitekturen bør være et sammenspil mellem klienten og en eller flere server(e). Nødvendigheden af en lokal database forekommer da appen skal kunne køre uden internet adgang, idet at afhængighed af internet adgang ville kunne ødelægge brugeroplevelsen. Samtidigt er det nødvendigt med en eller flere server(e) med separat database for at den lokale database kan udvides og opdateres uden at brugeren skal til at hente en ny opdateret version af appen.
 
-\includegraphics[scale=0.40]{includes/billeder/arkitektur.png}
-% skriv beskrivelse
+\includegraphics[scale=0.40]{includes/billeder/arkitektur.png} \\
+Et par problemstillinger der kommer i spil her er; hvor ofte vi bør synkronisere lokale databaser med server databaserne, hvor store må opdateringer være før de begynder at genere brugeren samt bør opdateringer foretages automatisk eller bør brugeren selv manuelt stå for det. \\
+En løsningen kunne være på forhånd at advare brugeren i terms of use for appen om at opdateringer pr standard foretages automatisk, at brugeren skal være klar på at opdateringer kan have en vis størrelse og dermed kan koste en del data samt at databasen opdateres hvert kvartal. For så at give brugeren muligheden for selv manuelt at lave ændringer på indstillingerne gennem en simpel menu.
