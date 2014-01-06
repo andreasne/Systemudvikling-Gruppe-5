@@ -42,40 +42,32 @@ Disse user stories omhandlede tasks med:
 I sprint 1 benyttede vi XP praktikkerne: stand-up meeting, planning poker, par programmering, kollektivt kode ejerskab, refactoring, kodestandarder, story board, metafor og simpelt design. \\
 
 Vi lavede planning poker med story points til at vurdere størrelsen af user stories for senere hen at udregne vores velocity. \\
-Vi arbejdede med par programmering i 2 grupper, hvor vi også i høj grad havde den af grupperne med en mand i til at undersøge teknologien. Vi forsøgte så vidt muligt at få alle ind over koden hvor vi i forvejen havde aftalt at bruge Java camelcasing samt at refactorer koden med KISS som mål. Derudover vi benyttede domæne model og database schema til design for at få enighed om samt overblik over domænet. 
+Vi arbejdede med par programmering i 2 grupper, hvor vi også i høj grad havde den af grupperne med en mand i til at undersøge teknologien. Vi forsøgte så vidt muligt at få alle ind over koden hvor vi i forvejen havde aftalt at bruge Java camelcasing samt at refactorer koden med KISS som mål. Derudover benyttede vi domæne model og database schema til design for at få overblik over domænet. 
 
-Mht. kvalitetssikring valgte vi ikke at benytte test-first eller unit testing eftersom vi på dette tidspunkt ikke rigtigt havde noget relevant at teste på samt at vi prioriterede funktionalitet.
+Mht. kvalitetssikring valgte vi ikke at benytte test-first eller unit testing eftersom vi på dette tidspunkt ikke rigtigt havde noget relevant at teste på samt at vi prioriterede funktionalitet. Dette gjorde pga. de korte sprint på en uge hvilket resulterede i at vi kun havde 4 dage inden vi skulle fremvise noget funktionelt til reviewet
 
 
 
 \subsection*{Produkt review}
-Til reviewet i starten af sprint 2 præsenterede vi vores grafiske brugergrænseflade vi havde på nuværende tidspunkt ikke 
-% indsæt screenshot her.
- 
-\subsubsection*{Konklusion af review}
-At vi havde et lovende interface med statisk funktionalitet, men uden database adgang.
-
+Til reviewet i starten af sprint 2 præsenterede vi vores grafiske brugergrænseflade vi havde på nuværende tidspunkt ikke noget funktionelt at vise. vi havde et lovende interface med statisk funktionalitet, men uden database adgang.
 
 \subsection*{Retrospektive}
-Sprint 1 har ikke forløbet som forventet vi har ikke fået et brændt et eneste story point af, da vi ikke har haft for store user stories og vi har ikke lagt op til at kunne brænde på tasks. Endvidere har vi ikke nået at programmerer det vi havde forventet. Dette har været pga. vores manglende erfaring indenfor Android og vi har derfor brugt for lang tid på at forsøge at sætte database op. Selvom vi har beregnet spikes ind i vores user stories har vi ikke lavet et realistisk estimat af dette.\\
+Sprint 1 har ikke forløbet som forventet vi har ikke fået brændt et eneste story point af, da vi har haft for store user stories og vi har ikke lagt op til at kunne brænde på tasks. Endvidere har vi ikke nået at programmerer det vi havde forventet. Dette har været pga. vores manglende erfaring indenfor Android og vi har derfor brugt for lang tid på at forsøge at sætte databasen op. Selvom vi har beregnet spikes ind i vores user stories har vi ikke lavet et realistisk estimat af dette.\\
 
 Vi kan derfor konkluderer at sprint 1 har fejlet pga. for store user stories, der er svære at repræsenterer på vores burndown og pga. dårlig estimering af user stories, som er et mén fra vores dårlige erfaring med Android. Vi har estimeret opsætning af database ud fra vores tidligere erfaring med opsætning af database i nye platformer.
 
 
 \subsubsection*{Hvad gik godt}
-I sprint 1 benyttede vi XP praktikkerne: stand-up meeting, planning poker, par programmering, kollektivt kode ejerskab, refactoring, kodestandarder, løbende integration, story board, kanban begrænsninger, metafor og simpelt design. \\
-
-
 \textsf{Planning Poker:}\\
-Vi har brugt planning poker til at estimerer de enkelte user stories. I vores situation kom vi til at undervurdere vores user stories men det mener vi ikke selve praktikken skal have skyld for.\\ \\
+Vi har brugt planning poker til at estimerer de enkelte user stories. I vores situation undervurderede vi vores user stories, men det mener vi ikke selve praktikken skal have skyld for.\\ \\
 \textsf{Par programmering:}\\
-Vi har i høj grad brugt par programmering hvor vi har siddet i 2 grupper. 1 med 2 personer og 1 med 1 person.\\ \\
+Vi har i høj grad brugt par programmering hvor vi har siddet i 2 grupper. 1 med 2 personer og 1 med 1 person. Hvilket har virket mest optimalt i forhold til at arbejde med en ny teknologi.\\ \\
 \textsf{Kollektivt kode ejerskab:}\\
 Vi har brugt kollektivt kodeejerskab dog ikke helt som xp foreskriver, hvor man f.eks. bytter på et bestemt tidspunkt på dagen, men i den forstand at vi er en lille gruppe og vi har alle måttet sætte os ind i tingene for at kunde kode i Android.\\ \\
 \textsf{Stand-up meeting:}\\
-Vi har holdt standup meeting hver morgen for at vurdere hvor langt vis hver især er nået i kodningsprocessen. Derefter har vi bedre kunnet vurdere hvorvidt det har været muligt at blive færdig med de enkelte tasks.\\ \\
+Vi har holdt standup meeting hver morgen for at vurdere hvor langt vi hver især er nået i kodningsprocessen. Derefter har vi bedre kunnet vurdere hvorvidt det har været muligt at blive færdig med de enkelte tasks.\\ \\
 \textsf{Refactoring:}\\
-Refactoring har vi brugt i stor grad idet de enkelte sprints også har været en læringsprocess. Bla. har vi måttet ændre vores tilgang til hvordan databasen skulle sættes op. I begyndelsen lavede vi databasen i selve koden, men vi blev senere klar over at vi blev nødt til at lave insert i databasen i selve koden og at dette ville skabe kæmpe uoverskuelige store filer. Derfor blev vi nødt til at sætte databasen op i SQLite først, ligge den ind i vores android projekt og kalde vores data derfra.\\ \\
+Refactoring har vi brugt i stor grad idet de enkelte sprints også har været en læringsprocess. Blandt andet har vi måttet ændre vores tilgang til hvordan databasen skulle sættes op. I begyndelsen lavede vi databasen i selve koden, men vi blev senere klar over at vi blev nødt til at lave insert i databasen i selve koden og at dette ville skabe kæmpe uoverskuelige store filer. Derfor blev vi nødt til at sætte databasen op i SQLite først, ligge den ind i vores android projekt og kalde vores data derfra.\\ \\
 \textsf{Metafor:}\\
 Vi har undervejs blevet enige om hvilken terminologi der skulle bruge i vores projekt. Bla. har vi defineret noget af dette på vores domænemodel og database diagram.\\ \\
 \textsf{Story board:}\\
@@ -94,7 +86,7 @@ Vores user stories skal splittes mere og bedre op, så vi er bedre istand til at 
 Vores Burndown var lavet med story points som funktion af dage. \\ \\
 
 \textsf{Korrigere for fravær}\\
-Vi fik ikke ordentligt taget hensyn til fravær og bare lidt fravær gør en meget stor forskel når vi er så få og har så få resurser. \\ \\
+Vi fik ikke ordentligt taget hensyn til fravær og bare lidt fravær gør en meget stor forskel når vi er så få og har så få ressourcer. \\ \\
 
 \textsf{Andet:} \\
 Vi lavede ikke test-first - Idet at det ikke var muligt da vi ikke er erfarne med Android. \\ \\
@@ -107,5 +99,3 @@ Burndown sammensat af timer og dage, i stedet for point. \\
 Opdeling af user stories. \\
 Vil lave burndown af tasks i stedet for user stories. \\
 Vores accept tests.
-
-\subsection*{Sprint Konklusion}
