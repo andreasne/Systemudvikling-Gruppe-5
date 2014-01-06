@@ -1,76 +1,60 @@
 Vi har valgt at analysere vores project i forhold bohms model, samt at lave risici analyse på forskellige muligheder mht. teknologi heriblandt: Android og Windows mobile, eventuelt kunne vi også have overvejet mobile web. For hver enkelt teknologi skal overvejes specielt i forhold vores erfaring med den, samt relevans ift. målet. \\
 
-\subsection*{Bohms model}
-% efterfølgende skal opdateres
-\includegraphics[scale=1.00]{includes/billeder/bohmsmodel.png} \\
-Vi en lille gruppe på 3, med kun 2 udviklere. Det er ikke kritisk om hvorvidt appen skulle crashe så vi har vurderet Criticality til Comfort. For Personnel har vi vurderet til at ligger cirka midt på idet at vi har meget forskelligt fagligt niveau i forhold til kodning. Vi forventer at der bliver brug for meget dynamik, idet at vi har lidt kendskab til teknologierne og at der derfor højst sandsynligt vil opstå en masse ændringer undervejs i processen. I gruppen trives vi med en lille smule overordnet planlægning, men ellers på kaos og høj personlig frihed. 
 
+\begin{figure}[H]
 \begin{center}
-\line(1,0){450}
+\includegraphics[scale=1.00]{includes/billeder/bohmsmodel.png}
+\caption{Bohms model}
+\label{fig:risici:bohms_model}
 \end{center}
+\end{figure}
+
+\subsection*{Bohms model ~\ref{fig:risici:bohms_model}} 
+Vi en lille gruppe på 3, med kun 2 udviklere. Det er ikke kritisk om hvorvidt appen skulle crashe så vi har vurderet Criticality til Comfort. For Personnel har vi vurderet til at ligger cirka midt på idet at vi har meget forskelligt fagligt niveau i forhold til kodning. Vi forventer at der bliver brug for meget dynamik, idet at vi har lidt kendskab til teknologierne og at der derfor højst sandsynligt vil opstå en masse ændringer undervejs i processen. I gruppen trives vi med en lille smule overordnet planlægning, men ellers på kaos og høj personlig frihed.
 
 \subsection*{Risici analyse}
 Vi har valgt at fokusere på risici for Android og Windows mobile idet at vi mener at disse er blandt de mest relevante teknologier i forhold til vores app. Yderligere kunne man evt. vurdere for IPhone og mobile web.
 
 \subsubsection*{Android mobile}
-\includegraphics[scale=0.70]{includes/billeder/risici_analyse_android.png} \\ \\
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.70]{includes/billeder/risici_analyse_android.png}
+\caption{Risici analyse android}
+\label{fig:risici:analyse_android}
+\end{center}
+\end{figure}
 
-\textsf{Omgivelser (Enviroment):} \\
+\textsf{Omgivelser (Enviroment):} ~\ref{fig:risici:analyse_android} \\
 Vi har vurderet at der er høj usikkerhed mht. teknologien specielt ift. Android og SQLite. Der er ikke nogen interessenter der skal koordineres. Systemets kompleksitet vil have en moderat effekt, mest er det FoodMap funktionaliteten som kan vise sig problematisk da vi ikke helt ved hvad den indebærer, samt at der vil forekomme nogle performance og usability krav der hurtigt kan gøre systemet komplekst. \\ 
-\textsf{Effekt point ialt:}
-3 + 0 + 2 = 5
+\textsf{E-risici ialt:} 3 + 0 + 2 = 5
 \\ \\
 
 
-\textsc{Agile A-risici:} \\
+\textsf{Agile A-risici:} ~\ref{fig:risici:analyse_android} \\
 Umiddelbart er det er et relativt småt projekt, derfor har vi vurderet A-Scale til ikke at have nogen effekt. Simpelt design vil ikke have den store effekt, da der ikke behøves den store planlægning eller dokumentation af systemet. Der vil ikke være nogen udskiftning af udviklere så A-Churn har ingen effekt. A-Skill kan gå hen at få en stor effekt, idet at vores uddannelsesniveau er meget lavt i forhold til teknologien. \\ \\    
-\textsf{A-risici ialt:} \\ 
-0 + 1 + 0 + 3 = 4 \\ \\
+\textsf{A-risici ialt:} 0 + 1 + 0 + 3 = 4 \\ \\
 
-\textsc{Plan-driven P-risks:} \\
+\textsf{Plan-driven P-risks:} ~\ref{fig:risici:analyse_android} \\
 Vi forventer at der vil forekomme mange ændringer og dette vil have en stor effekt. Derudover er der et behov for hurtige resultater, idet at vi har brug for løbende releases for at få feedback fra reviews. Uklare krav vil have en meget lille effekt, idet at det i høj grad er os selv der definerer dem. Mangel på specialister vil have en stor effekt, da specialiser er nødvendige for at kunne bruge de plandrevne værktøjer ordentligt med den pågældende teknologi. \\
-\textsf{P-risks ialt:} \\
-3 + 3 + 1 + 3 = 10
+\textsf{P-risici ialt:} 3 + 3 + 1 + 3 = 10
 
-%\begin{itemize}
-%\item E-Tech. Usikkerhed mht. teknologien: 2 
-%\begin{itemize}
-%\item Android ide: 2
-%\item Versionstyring: 3
-%\item Emulator: 1
-%\end{itemize}
-%
-%\item E-Coord. Interessenter der skal koordineres: 0
-%\item E-Cmplx. Systemets kompleksitet: 2
-%\begin{itemize}
-%\item FoodMap funktionalitet: 2
-%\item API: 1
-%\end{itemize}
-%
-%\item A-Scale. Størrelse og kritiskhed: 0
-%\item A-YAGNI. Simpelt design eller YAGNI: 1
-%\item A-Churn. Udskiftning af udviklere: 0
-%\item A-Skill. Ikke nok uddannelse af folk til at arbejde agilt: 3
-%\item P-Change. Mange ændringer: 1
-%\item P-Speed. Behov for hurtige resultater: 2
-%\item P-Emerge. Uklare krav: 1
-%\item P-Skill. Mangel på specialister: 3
-%\end{itemize}
-
-\begin{center}
-\line(1,0){450}
-\end{center}
+\newpage
 
 \subsubsection*{Windows mobile} 
-\includegraphics[scale=0.70]{includes/billeder/risici_analyse_windowsphone.png} \\
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.70]{includes/billeder/risici_analyse_windowsphone.png}
+\caption{Risici analyse windowsphone}
+\label{fig:risici:analyse_windowsphone}
+\end{center}
+\end{figure}
 
-
-\textsf{Omgivelser (Enviroment):} \\
+\textsf{Omgivelser (Enviroment):} ~\ref{fig:risici:analyse_windowsphone} \\
 Vi har vurderet at der er jævn usikkerhed mht. teknologien idet at vi ikke den store viden for Windows mobile, dog har vi tidligere erfaring med Visual studio og MSSQL. Der er ikke nogen interessenter der skal koordineres. Systemets kompleksitet vil have en moderat effekt, mest er det FoodMap funktionaliteten som kan vise sig problematisk da vi ikke helt ved hvad den indebærer, samt at der vil forekomme nogle performance og usability krav der hurtigt kan gøre systemet komplekst. \\ \\
 \textsf{Enviroment effekt ialt:} \\
 2 + 0 + 2 = 4 \\ \\
 
-\textsc{Agile A-risici} og \textsc{Plan-driven P-risks:} \\
+\textsf{Agile A-risici} og \textsf{Plan-driven P-risks:} ~\ref{fig:risici:analyse_windowsphone} \\
 Umiddelbart er vilkårene de samme som for Android mobile, men idet at vi har arbejdet mere med .NET, Visual studio og MSSQL forinden har vi valgt at vurdere effekten på P-Skill lavere. \\
 \textsf{A-risici ialt:} \\
 0 + 1 + 0 + 3 = 4 \\
