@@ -12,6 +12,4 @@ public class IngredientBasket {
 	public void setIngredientBasket(ArrayList<String> ingredientBasket) {
 		this.ingredientBasket = ingredientBasket;
 	}
-	
-	
 }
