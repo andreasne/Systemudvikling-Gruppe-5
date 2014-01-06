@@ -1,14 +1,14 @@
 \subsection*{Velocity}
 I sprint 1 forventede vi at have 4 timer om dagen per mand i gruppen. Dvs. 8 mandetimer om dagen med 2 hold med
 4 arbejdsdage. \\
-Vi regnede os til at 5 storypoint tager 8 mandetimer \\
-Det svarer til: 5 storypoints / 8 mandetimer = 0,625 storypoint per mandetime \\
+Vi regnede os til at 5 story points tager 8 mandetimer \\
+Det svarer til: 5 story points / 8 mandetimer = 0,625 story points per mandetime \\
 
-32 mande timer i en iteration. \\
-32 mandetimer * 0,625 = 20 storypoints per uge, dvs. 5 storypoints per dag. Dog tog vi et ekstra storypoint med for ugen.
+32 mande timer pr iteration. \\
+32 mandetimer * 0,625 = 20 story points per uge, dvs. 5 story points per dag. Dog tog vi et ekstra story point med for ugen.
 
 \subsection*{Planlægning}
-Til sprintet afbillede vi vores burndown som en funktion af storypoints per mandedage. \\
+Til sprintet afbillede vi vores burndown som en funktion af story points per mandedage. \\
 
 \includegraphics[scale=0.10]{includes/billeder/sprint1.jpg}
 % indsæt burndown her
@@ -16,16 +16,22 @@ Til sprintet afbillede vi vores burndown som en funktion af storypoints per mand
 \subsubsection*{Product backlog} 
 Product backloggen så i sprint 1 sådan ud: \\
 %link til at genere tabeller: http://www.tablesgenerator.com/
+\begin{figure}
+\begin{center}
 \includegraphics[scale=0.60]{includes/billeder/productbacklog_sprint1.png}
+\caption{Produkt backlog sprint 1}
+\label{fig:sprint1:produktbacklog}
+\end{center}
+\end{figure}
 
 \subsubsection*{Sprint backlog}
-I sprintet fokuserede vi på 2 userstories:
+I sprintet fokuserede vi på 2 user stories:
 \begin{itemize}
-\item Brugeren vil gerne have flere forslag til ingredienser frem på food map, ved at trykke på den midterste knap.
+\item Brugeren vil gerne have flere forslag til ingredienser frem på foodmap, ved at trykke på den midterste knap.
 \item Brugeren vil gerne have adgang til database.
 \end{itemize}
 
-Disse userstories omhandlede tasks med: 
+Disse user stories omhandlede tasks med:
 \begin{itemize}
 \item database design
 \item oprettelse af tabeller
@@ -35,9 +41,8 @@ Disse userstories omhandlede tasks med:
 \subsection*{Xp praktikker}
 I sprint 1 benyttede vi XP praktikkerne: stand-up meeting, planning poker, par programmering, kollektivt kode ejerskab, refactoring, kodestandarder, story board, metafor og simpelt design. \\
 
-Vi lavede planning poker med storypoints til at vurdere størrelsen af userstories for senere hen at udregne vores velocity. \\
-Vi arbejdede med par programmering i 2 grupper, hvor vi også i høj grad havde den af grupperne med en mand i til at undersøge teknologien. Vi forsøgte så vidt muligt at få alle ind over koden hvor vi i forvejen havde aftalt at bruge Java camelcasing samt at refactorer koden med KISS som mål.
-Derudover vi benyttede domæne model og database schema til design for at få enighed om samt overblik over domænet. 
+Vi lavede planning poker med story points til at vurdere størrelsen af user stories for senere hen at udregne vores velocity. \\
+Vi arbejdede med par programmering i 2 grupper, hvor vi også i høj grad havde den af grupperne med en mand i til at undersøge teknologien. Vi forsøgte så vidt muligt at få alle ind over koden hvor vi i forvejen havde aftalt at bruge Java camelcasing samt at refactorer koden med KISS som mål. Derudover vi benyttede domæne model og database schema til design for at få enighed om samt overblik over domænet. 
 
 Mht. kvalitetssikring valgte vi ikke at benytte test-first eller unit testing eftersom vi på dette tidspunkt ikke rigtigt havde noget relevant at teste på samt at vi prioriterede funktionalitet.
 
@@ -52,9 +57,9 @@ At vi havde et lovende interface med statisk funktionalitet, men uden database a
 
 
 \subsection*{Retrospektive}
-Sprint 1 har ikke forløbet som forventet vi har ikke fået et brændt et eneste storypoint af, da vi ikke har haft for store userstories og vi har ikke lagt op til at kunne brænde på tasks. Endvidere har vi ikke nået at programmerer det vi havde forventet. Dette har været pga. vores manglende erfaring indenfor android og vi har derfor brugt for lang tid på at forsøge at sætte database op. Selvom vi har beregnet spikes ind i vores userstories har vi ikke lavet et realistisk estimat af dette.\\
+Sprint 1 har ikke forløbet som forventet vi har ikke fået et brændt et eneste story point af, da vi ikke har haft for store user stories og vi har ikke lagt op til at kunne brænde på tasks. Endvidere har vi ikke nået at programmerer det vi havde forventet. Dette har været pga. vores manglende erfaring indenfor Android og vi har derfor brugt for lang tid på at forsøge at sætte database op. Selvom vi har beregnet spikes ind i vores user stories har vi ikke lavet et realistisk estimat af dette.\\
 
-Vi kan derfor konkluderer at sprint 1 har fejlet pga. for store userstories, der er svære at repræsenterer på vores burndown og pga. dårlig estimering af userstories, som er et mén fra vores dårlige erfaring med android. Vi har estimeret opsætning af database ud fra vores tidligere erfaring med opsætning af database i nye platformer.
+Vi kan derfor konkluderer at sprint 1 har fejlet pga. for store user stories, der er svære at repræsenterer på vores burndown og pga. dårlig estimering af user stories, som er et mén fra vores dårlige erfaring med Android. Vi har estimeret opsætning af database ud fra vores tidligere erfaring med opsætning af database i nye platformer.
 
 
 \subsubsection*{Hvad gik godt}
@@ -62,7 +67,7 @@ I sprint 1 benyttede vi XP praktikkerne: stand-up meeting, planning poker, par p
 
 
 \textsf{Planning Poker:}\\
-Vi har brugt planning poker til at estimerer de enkelte userstories. I vores situation kom vi til at undervurdere vores userstories men det mener vi ikke selve praktikken skal have skyld for.\\ \\
+Vi har brugt planning poker til at estimerer de enkelte user stories. I vores situation kom vi til at undervurdere vores user stories men det mener vi ikke selve praktikken skal have skyld for.\\ \\
 \textsf{Par programmering:}\\
 Vi har i høj grad brugt par programmering hvor vi har siddet i 2 grupper. 1 med 2 personer og 1 med 1 person.\\ \\
 \textsf{Kollektivt kode ejerskab:}\\
@@ -86,7 +91,7 @@ Vi har defineret kodestandarder i sprint 0 for at kunne fremvise pæn kode.\\
 Vores user stories skal splittes mere og bedre op, så vi er bedre istand til at tegne burndown ned. \\
 
 \textsf{Burndown kunne laves bedre:} \\
-Vores Burndown var lavet med storypoints som funktion af dage. \\ \\
+Vores Burndown var lavet med story points som funktion af dage. \\ \\
 
 \textsf{Korrigere for fravær}\\
 Vi fik ikke ordentligt taget hensyn til fravær og bare lidt fravær gør en meget stor forskel når vi er så få og har så få resurser. \\ \\
@@ -95,12 +100,12 @@ Vi fik ikke ordentligt taget hensyn til fravær og bare lidt fravær gør en meget 
 Vi lavede ikke test-first - Idet at det ikke var muligt da vi ikke er erfarne med Android. \\ \\
 
 \subsubsection*{Ting vi fortsætter med} 
-Vi fortsætter med at benytte pair-progamming til de mere komplekse tasks idet at det er et godt værktøj til at sætte os ind i ny teknologi sammen.
+Vi fortsætter med at benytte par progammering til de mere komplekse tasks idet at det er et godt værktøj til at sætte os ind i ny teknologi sammen.
 
 \subsubsection*{Hvad ændrer vi til næste sprint}
 Burndown sammensat af timer og dage, i stedet for point. \\
 Opdeling af user stories. \\
-Vil lave burndown af tasks istedet for user stories. \\
+Vil lave burndown af tasks i stedet for user stories. \\
 Vores accept tests.
 
 \subsection*{Sprint Konklusion}
