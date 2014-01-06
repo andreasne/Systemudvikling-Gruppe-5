@@ -4,9 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Ingredient implements Serializable {
-	
-	
-	
+		
 	private String category;
 	private String name_ingredient;
 	private ArrayList<IngredientRecipe> ingredientRecipeList;

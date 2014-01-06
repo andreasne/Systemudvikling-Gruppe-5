@@ -29,13 +29,8 @@ public class DBHelper extends SQLiteOpenHelper{
 	private Context myContext;
 
 	//The Android's default system path of your application database.
-	
-	//private String DB_PATH = "/data/data/" + myContext.getPackageName() + "/databases/";
 	private String DB_PATH = "/data/data/com.example.databasetest/databases/";
 				
-//"/data/data/com.example.databasetest/databases/";
-	
-	
 
 	/**
 	 * Constructor
@@ -137,12 +132,6 @@ public class DBHelper extends SQLiteOpenHelper{
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 	}
 
-	// Add your public helper methods to access and get content from the database.
-	// You could return cursors by doing "return myDataBase.query(....)" so it'd be easy
-	// to you to create adapters for your views.
-
-	
-	
 	
 	/**
 	 * get single ingredient
@@ -182,7 +171,6 @@ public class DBHelper extends SQLiteOpenHelper{
 	}
 	
 	public ArrayList<Ingredient> getAllIngredients(){
-		//SQLiteDatabase db = this.getReadableDatabase();
 		
 		Ingredient ingredientObj = new Ingredient();		
 		ArrayList<Ingredient> ingredientList = new ArrayList<Ingredient>();
@@ -199,5 +187,4 @@ public class DBHelper extends SQLiteOpenHelper{
 		
 		return ingredientList;
 	}
-
 }

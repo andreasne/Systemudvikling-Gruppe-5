@@ -43,22 +43,6 @@ public class RadialMenuActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		
-		
-		//setupListViewAdapter();
-		//setupAddIngredientButton();
-		
-		
-		//RelativeLayout rl = (RelativeLayout) findViewById(R.id.relativeLayoutTest);
-        //ListView listView1 = (ListView) findViewById(R.id.listView1);
-        
-        //String[] items = { "Milk", "Butter" };
-        
-        
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
-        
-        //listView1.setAdapter(adapter);
-		
         
       //------------------------------------------------------------------------------------------
         // Generating Pie view
@@ -77,18 +61,6 @@ public class RadialMenuActivity extends Activity {
 	             LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT); 
 		addContentView(ll, params);
 
-		
-/*		final LinearLayout ll = new LinearLayout(this);
-		LinearLayout.LayoutParams p = new LinearLayout.LayoutParams(
-				LinearLayout.LayoutParams.FILL_PARENT,
-				LinearLayout.LayoutParams.FILL_PARENT);
-		final TextView tv = new TextView(this);
-		tv.setText("Hello");
-		tv.setTextColor(Color.WHITE); 
-		ll.addView(tv);
-		addContentView(ll, p);*/
-
-
 		ListView listView1 = (ListView) findViewById(R.id.listView1);
         
         String[] items = { "Milk" };
@@ -98,21 +70,6 @@ public class RadialMenuActivity extends Activity {
         
         listView1.setAdapter(adapter);
 			
-		//Button testButton = (Button) this.findViewById(R.id.button1);
-		//testButton.setOnClickListener(new OnClickListener() {
-			//public void onClick(View v) {
-				//Toast.makeText(RadialMenuActivity.this, "Button Clicked!",
-					//	Toast.LENGTH_SHORT).show();
-				/*
-				 * Dialog dialog = new Dialog(RadialMenuActivity.this);
-				 * dialog.setContentView(new
-				 * RadialMenuWidget(RadialMenuActivity.this)); dialog.show();
-				 */
-				// Dialog dialog = new Dialog(RadialMenuActivity.this);
-				// dialog.setContentView(new
-				// RadialMenuWidget(RadialMenuActivity.this));
-				// dialog.setCanceledOnTouchOutside(true);
-				// dialog.show();
 
 				PieMenu = new RadialMenuWidget(getBaseContext());
 
@@ -136,32 +93,9 @@ public class RadialMenuActivity extends Activity {
 				PieMenu.addMenuEntry(new Menu4());
 				PieMenu.addMenuEntry(new Menu5());
 				PieMenu.addMenuEntry(new Menu6());
-/*				try {
-					Class<drawable> res = R.drawable.class;
-					Field field = res.getField("icon");
-					int drawableId = field.getInt(null);
-				} catch (Exception e) {
-					Log.e("MyTag", "Failure to get drawable id.", e);
-				}*/
-				//tv = new TextView(getBaseContext());
-				//tv.setText("Hello");
-				//tv.setTextColor(Color.WHITE); 
-				//ll.addView(tv);
-				
+	
 				ll.addView(PieMenu);
-				
-				
-				
-				
-				// PieMenuImpl pieMenu = new PieMenuImpl();
-
-				// pieMenu.addMenuEntry( new FileMenu() );
-
-				// pieMenu.show();
 			}
-		
-		//	});
-		//}
 
 	
 		public boolean onTouchEvent(MotionEvent e) {
@@ -823,13 +757,6 @@ public class RadialMenuActivity extends Activity {
 	         
 	         myBasket.add(pankoString);
 	      
-	         /*
-	         
-		     ListView listView1 = (ListView) findViewById(R.id.listView1);
-	         ArrayAdapter<String> adapter = new ArrayAdapter<String>(RadialMenuActivity.this, android.R.layout.simple_list_item_1, myBasket);
-	         adapter.notifyDataSetChanged();
-	         listView1.setAdapter(adapter);
-	         */
 	      }
 	   }
 	   
@@ -1064,10 +991,7 @@ public class RadialMenuActivity extends Activity {
 			   
 			   return diaryList;
 		   }
-	    
-	    
-	    
-	    
+	    	    
 	    @Override
 	    public boolean onCreateOptionsMenu(Menu menu) {
 	        // Inflate the menu; this adds items to the action bar if it is present.

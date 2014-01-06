@@ -244,17 +244,7 @@ public class RadialMenuWidget extends View {
 					selected = null;
 					}					
 				}
-			} //else {
-				//This is when something outside the circle or any of the rings is selected
-				
-				
-				//Toast.makeText(getContext(), "Area outside rings pressed.", Toast.LENGTH_SHORT).show();
-
-				
-				//selected = null;
-				//enabled = null;
-			//}
-			//selected = null;
+			} 
 			selected2 = null;
 			inCircle = false;
 		}
