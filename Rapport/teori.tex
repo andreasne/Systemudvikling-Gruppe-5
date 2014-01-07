@@ -19,24 +19,25 @@ For at extreme programming kan hænge sammen har Kent Beck opsat 13 praktikker de
 \end{itemize}
 
 \subsection{Personer og Roller}
-Ligesom i plandrevne udviklingsmetoder er der forskellige personer der varetager forskellige roller/funktioner. Disse vil jeg liste herunder.\\
+Ligesom i plandrevne udviklingsmetoder er der forskellige personer der varetager forskellige roller/funktioner. Disse vil vi liste herunder.\\ \\
 
 \textbf{Kunde/interesser} \\
 Kunden definerer opgaver/user stories som er små stykker funktionalitet som programmet skal indeholde. Dette foregår i tæt relation til kunden(mund til mund).\\
-Kunden estimerer prioriteringen af forskellige opgaver alt efter hvilken funktionalitet kunden mener er vigtigst og er med til hvert realese for at se hvilke funktionaliteter kodeholdet har udviklet. Kunden definerer også om en bestemt accept test er opnået. \\ \\
+Kunden estimerer prioriteringen af forskellige opgaver alt efter hvilken funktionalitet kunden mener er vigtigst og er med til hvert realese for at se hvilke funktionaliteter kodeholdet har udviklet. Kunden definerer også om en bestemt accept test er opnået. \\
+Kunden har en tæt relation til udviklingsteamet. \\ \\
 
 \textbf{udviklingteam }\\
 Udviklingsteamet estimerer de forskellige user stories efter story points eller mandetimer.\\
 Udviklingsteamet programmerer programmet ud fra user stories og sikrer kvalitet ved at bruge test first, par programmering og accept tests.
 
 \subsection{Proces}
-Processen starter med at udviklingsteamet sætter sig ned med kunden og snakker om hvilke funktionaliteter kunden ønsker for deres system. Samtidig nedskriver udviklingsteamet disse funktionalitet ned på en user story, som definere hvem der vil bruge denne funktionalitet, hvad den skulle kunne og hvad brugeren skal kunne få ud af funktionaliteten. Herefter skrives en accept test på bagsiden af user storien, som definere hvornår storien er kan sættes fra verificer over på done. Det kan være at udviklingstemaet bliver nødt til at lave nogle ekstra user stories hvis fx noget teknologi er ukendt. Dette kaldes spikes. Når alle user stories er skrevet, sætter udviklingsteamet sig ned og begynder at estimere hvor lang tid de enkelte user stories tager i story points. \\
-Her kommer planning poker ind i billedet. Hvert medlem af udviklingsteamet får et sæt kort med fibonacci numrene: 1/2, 1, 2, 3, 5, 8, 13, 20, 40, 100, ?, og en kaffekop. Man begynder spillet med at finde den user story man mener tager gennemsnitlig tid at lave og tildeler denne værdien 5. \\ Ud fra denne story byder de forskellige udviklingsmedlemmer ind på hvad de mener de enkelte stories burde have i værdi med planningpoker kortene. \\ 
+Processen starter med at udviklingsteamet sætter sig ned med kunden og snakker om hvilke funktionaliteter kunden ønsker for deres system. Samtidig nedskriver udviklingsteamet disse funktionalitet ned på en user story, som definere hvem der vil bruge denne funktionalitet, hvad den skulle kunne, og hvad brugeren skal kunne få ud af funktionaliteten. Herefter skrives en accept test på bagsiden af user storien, som definere hvornår storien kan sættes fra verificer over på done. Det kan være at udviklingstemaet bliver nødt til at lave nogle ekstra user stories hvis fx noget teknologi er ukendt. Dette kaldes spikes. Når alle user stories er skrevet, sætter udviklingsteamet sig ned og begynder at estimere hvor lang tid de enkelte user stories tager i story points. \\
+Her kommer planning poker ind i billedet. Hvert medlem af udviklingsteamet får et sæt kort med fibonacci numrene: 1/2, 1, 2, 3, 5, 8, 13, 20, 40, 100, ?, og en kaffekop. Man begynder spillet med at finde den user story man mener har en meelem sværhedsgrad og tildeler denne værdien 5. \\ Ud fra denne story byder de forskellige udviklingsmedlemmer ind på hvad de mener de enkelte stories burde have i værdi med planning poker kortene. \\ 
 Kortet ? betyder at man ikke har nogen ide om hvor langt tid det tager at lave denne user story og kaffekoppen at man gerne vil holde en kaffepause. Dette kan være aktuelt hvis der er uenighed mellem udviklingsmedlemmerne. Får en user story 20 points eller mere, er dette et tegn på at storien er for stor. Den skal derfor deles op og de nye user stories skal godkendes af kunden og gives point igen. \\
 Når alle user stories er defineret udregnes udviklingsteamets velocity, som er det antal story point udviklingstemaet kan nå i en iteration. I XP kan en iteration vare mellem 1-2 uger. Når velocityen er fundet tegnes den ind på et burndown diagram, hvor man har antal story point op ad y-aksen og antal mandedage hen a x-aksen.\\
 Kunden involveres igen for at lave en prioritering af de enkelte user stories for at finde ud af hvilke funktionaliteter der skal laves i den første iteration. Herefter definerer udviklingsteamet tasks som sættes på de enkelte user stories. Tasks er opgaver set fra udviklernes øjne og skal skrives som programmeringsopgaver. Det kan fx være skriv unit tests, modelklasse til kunde, opsætning af database med kundetabel osv.\\
-Inden man begynder på iteration 1 har man oftest en iteration 0 hvor udviklingsteamet sætter udviklingsmiljø og versionsstyring op, definere kodestandarder osv. Når dette er gjort kan udviklingsteamet gå i gang med iteration 1. \\ 
-Hver dag holdes et kort stand-up meeting på 10 - 15 minutter hvor de enkelte medlemmer diskuterer hvor langt de er nået og ser på hvilke tasks der skal laves i løbet af dagen. Samtidig tegnes der ned på burndown for at se om de har nået at brænde det antal story points der skal brændes. Stand-up meetinget holdes for at der ikke skal diskuteres i løbet af dagen, så hver enkelt programmør ikke spilder tid på diskussion. \\ 
+Inden udviklingsteamet begynder på iteration 1 har man oftest en iteration 0 hvor udviklingsteamet sætter udviklingsmiljø og versionsstyring op, definere kodestandarder, vuderer risiko for projektet osv. Når dette er gjort kan udviklingsteamet gå i gang med iteration 1. \\ 
+Hver dag holdes et kort stand-up meeting på 10 - 15 minutter hvor de enkelte medlemmer diskuterer hvor langt de er nået og ser på hvilke tasks der skal laves i løbet af dagen. Samtidig tegnes der ned på burndown for at se om de har nået at brænde det antal story points der skal brændes. Stand-up meeting holdes for at der ikke skal diskuteres i løbet af dagen, så hver enkelt programmør ikke spilder tid på diskussion. \\ 
 Kan udviklingsteamet se på deres burndown at de ikke kan nå iterationens opgaver bringes kunden ind for at se på hvilken/hvilke user stories der kan pilles ud af iterationen. Sker dette tegnes en lige streg ned på burndown for at illustrerer dette. Når iterationen er færdig holdes et retrospektive hvor man ser på hvad der gik godt og hvad der kunne være gjort bedre til næste iteration. Derefter gentages processen igen.\\
 Efter nogle iterationer holdes der et release som er atalt med kunden på forhånd, hvor udviklingsteamet holder en præsentation for kunden og viser hvilke funktionaliteter der er lavet. Kunden vurderer så om han er tilfreds med resultatet som det er eller om der skal arbejdes videre.\\ \\
 
@@ -66,7 +67,7 @@ Scrum blev udviklet i 90'erne af en mand ved navn Ken Schwaber. Han brugte hvad 
 \end{center}
 \end{figure}
 
-Her ses en model over de forskellige aktører i et SCRUM team. Modellen viser hvordan kunden kommer med krav til produkt owner. Produkt owner skriver derefter kravene ned i produkt backloggen med højeste prioritet øverst. Derefter snakker produkt owner med scrum master om hvilke items teamet kan lave ud fra deres velocity, hvorefter de bliver sat i en sprint backloggen og sendt viderer til udviklingsteamet. Udviklingsteamet bryder sprint backloggen ned i tasks og sætter dem op på et scrumboard. Herefter går teamet i gang med deres første sprint som typisk vare 1-4 uger. Hver morgen inden teamet går i gang med at programmerer holdes et dagligt stand-up meeting hvor scrum master vejleder processen. Kunden/interesserne er velkomne til at være med til disse møder men må ikke afbryde eller komme med input til processen. Hvis kunden vil have lavet ændringer skal han gå til produkt owner, som sætter ændringen i et fremtidig sprint. Et sprint kan nemlig ikke ændres når det sat igang. Hvis et udviklingsteam ikke kan opfylde de mål de har sat er skal de snakke med produkt owner om der kan tages nogle user stories ud af sprint backloggen. Ligesom i XP tegner man en lige streg ned på burndown diagrammet. Når udviklingsteamet er færdig med et sprint forbereder de et review som er en præsentation foran kunder hvor de kan komme med feedback til teamet. Udviklingsteamet laver så et sprint retrospektive hvor de kigger på hvilke praktikker/udviklingmetoder der gik godt, hvad der ikke gik godt og hvad der kan gøres bedre til næste sprint. Sådan optimeres udviklingsprocessen løbende. Når dette er gjort kan udviklingsteamet få opsat en ny sprint backlog ud fra produkt backloggen og gå i gang med næste sprint.
+Her ses en model over de forskellige aktører i et SCRUM team. Modellen viser hvordan kunden kommer med krav til produkt owner. Produkt owner skriver derefter kravene ned i produkt backloggen med højeste prioritet øverst. Derefter snakker produkt owner med scrum master om hvilke items teamet kan lave ud fra deres velocity, hvorefter de bliver sat i en sprint backloggen og sendt viderer til udviklingsteamet. Udviklingsteamet bryder sprint backloggen ned i tasks og sætter dem op på et scrumboard. Herefter går teamet i gang med deres første sprint som typisk vare 1-4 uger. Hver morgen inden teamet går i gang med at programmerer holdes et dagligt stand-up meeting hvor scrum master vejleder processen. Kunden/interesserne er velkomne til at være med til disse møder, men må ikke afbryde eller komme med input til processen. Hvis kunden vil have lavet ændringer skal han gå til produkt owner, som sætter ændringen i et fremtidig sprint. Et sprint kan nemlig ikke ændres når det sat igang. Hvis et udviklingsteam ikke kan opfylde de mål de har sat skal de snakke med produkt owner om der kan tages nogle user stories ud af sprint backloggen. Ligesom i XP tegner man en lige streg ned på burndown diagrammet. Når udviklingsteamet er færdig med et sprint forbereder de et review som er en præsentation foran kunder hvor de kan komme med feedback til teamet. Udviklingsteamet laver så et sprint retrospektive hvor de kigger på hvilke praktikker/udviklingmetoder der gik godt, hvad der ikke gik godt og hvad der kan gøres bedre til næste sprint. Sådan optimeres udviklingsprocessen løbende. Når dette er gjort kan udviklingsteamet få opsat en ny sprint backlog ud fra produkt backloggen og gå i gang med næste sprint.
 
 \subsection{Personer og Roller}
 \textbf{Kunde/interesser}\\
@@ -80,17 +81,5 @@ Scrum Master fungerer som et mellemled mellem Udviklingsteamet og productowner. 
 
 \textbf{Udviklingsteam}
 Et scrum udviklingsteam består typisk er et team på 7-9 personer hvor alle er med til Analyserer, designer, teste, estimere, planlægge og følger op. Teamet er selvorganiseret og finder derfor selv ud af hvordan de vil arbejde.\\ \\
-
-\section{Kanban}
-
-\section{Forskelle på plandrevne- og agile udviklings- metoder}
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[scale=0.35]{includes/billeder/Udviklingsmetoder.png}
-\caption{Udviklingsmetoder}
-\end{center}
-\end{figure}
-
 
 
