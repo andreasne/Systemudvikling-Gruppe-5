@@ -1,7 +1,7 @@
-\section*{Risici}
+\section{Risici}
 \input{risici.tex}
 
-\section*{Planlægning og styring}
+\section{Planlægning og styring}
 Til planlægning og styring benytter vi en sprint backlog med user stories og tasks, samt en releaseplan og et burndown chart. \\
 Vi har brugt scrum master for alle sprints, hvilket Bjarke har stået for. Dette gjorde vi selv i sprint 1 som egentligt var baseret på xp, men valgte at gøre det fordi det gav mening. Vi har valgt ikke at have en product owner idet at det ikke virkede effektivt i så lille en gruppe og det giver ikke mening at product owner er en del af udviklingsteamet, da han dermed bliver mere tilbøjelig til at godkende ændringer. Accept test har vi skrevet bag på vores user stories, hvor vi så for at godkende dem har haft en af gruppemedlemmerne til at tjekke at det er er opfyldt, samt at koden for den bestemte funktionalitet har kunnet kompileres og eksekveres uden at gå ned. \\
 
@@ -13,66 +13,66 @@ Vi har brugt scrum master for alle sprints, hvilket Bjarke har stået for. Dette 
 \end{center}
 \end{figure}
 
-\subsection*{Teknologi beslutninger}
+\subsection{Teknologi beslutninger}
 Versionsstyring: GIT \\
 Teknologi: Android og SQLite \\ 
 Rapport skrivning: LaTex \\
 IDE: Eclipse
 
-\subsection*{Kvalitetssikring og test}
+\subsection{Kvalitetssikring og test}
 Vi har benyttet par programmering i det omfang det ellers har givet mening. \\
 I det første 3 sprints har vi valgt ikke at benytte unit testing da vi, på grund af teknologien, er pressede tidsmæssigt til at have funktionalitet færdigt til produkt reviews. \\ 
 Automatisk løbende integration og test ville blive for tidskrævende at sætte op, men pusher ofte via GIT efter at have sikret at det kan kompileres og eksekveres.
 
-\subsection*{Deployment og configuration management }
+\subsection{Deployment og configuration management }
 Vi forventer ikke at nå til deployment, men skulle vi nå så langt ville den omhandle test og usabillity test af appen på diverse Android smartphone og tablets. For så at de endeligt brugere selv kan hente appen gennem appstore. \\
 Configuration management har vi håndteret med GIT, projektet har været så småt at vi ikke har haft behov for baselines eller brances, men alternativt ville vi for et større projekt med flere udviklere benytte begge, samt notere commit id i slutningen af hvert sprint.  
 
 \newpage
 
-\subsection*{Forventet velocity}
+\subsection{Forventet velocity}
 Vi forventer at have 4 timer om dagen per mand i gruppen. Dvs. 8 mandetimer om dagen med 2 hold. \\
 Vi har 4 sprints i alt inc sprint 0 - for sprint 1, 2 og 3 gælder: \\
 Sprint 1: 4 dage. \\
 Sprint 2: 4 dage. \\
 Sprint 3: 3 dage. \\
 
-\textsc{Story points per mandetime:} \\
+\textsf{Story points per mandetime:} \\
 5 story points (standard) tager 8 mandetimer \\
 5/8 = 0,625 story points per mandetime \\
 
-\textsc{Story points} \\
+\textsf{Story points} \\
 40 mande timer i et sprint \\
 40 * 0,625 = 25 story points per uge, dvs. 5 story points per dag \\
 
 Efterfølgende har vi i starten af hvert sprint revurderet den forventede velocity for det sprint.
 
-\section*{Sprint 0}
+\section{Sprint 0}
 \input{sprint_0.tex}
 
-\section*{Sprint 1 med XP}
+\section{Sprint 1 med XP}
 \input{sprint_1.tex}
 
 \newpage
 
-\subsection*{Sprint 2}
+\section{Sprint 2}
 \input{sprint_2.tex}
 
 \newpage
 
-\subsection*{Sprint 3}
+\section{Sprint 3}
 \input{sprint_3.tex}
 
 
-\section*{Retrospektive for hele forløbet}
-\subsection*{Hvad gik godt}
+\section{Retrospektive for hele forløbet}
+\subsection{Hvad gik godt}
 Vi fik nogle gode oplevelser med par programmering, specielt at man får verbaliseret sine tanker og dermed bliver mere afklaret med hvordan noget skal laves. Det skal dog bruges i den rigtige sammenhæng for at være brugbart. \\
 Vi oplevede også at den agile tilgang giver mere frihed til tilpasning end i UP, specielt i form af simpelt design for ikke at bruge en masse ressourcer på dokumentation, som egentligt ikke støtter udviklingen. \\
 Idet vi fik lavet kollektivt kodeejerskab, gennem blandt andet par programmering, oplevede vi at alle havde nemmere ved at snakke med. \\
 Unit testing gik godt tilsidst, det ville være optimalt at lave test-first, men vi havde ikke noget indblik i teknologien til at kunne lave dette. \\
 Det daglige standup meeting var med til at give en hurtig status, så vi hurtigere kunne komme i gang med udviklingsarbejdet. \\ \\
 
-\subsection*{Hvad gik mindre godt}
+\subsection{Hvad gik mindre godt}
 Det var meget svært at estimere og planlægge pga. mangel af erfaringen med teknologien, og vi oplevede meget at vores planlægning ramte ved siden af. Samtidigt var vores sprints generelt alt for korte til at kunne nå at lave tilpas funktionalitet til at have noget relevant at vise til hvert review. \\
 Det kunne have været godt med en mere jævndelt arbejdsbyrde, hvilket også blev en udfordring mht. vidensdeling. \\
 Vi var meget få udviklere i gruppen, hvilket blandt andet blev en problematik i forhold til fravær. \\
@@ -86,6 +86,6 @@ I vores tilfælde skulle vi have længere sprints og vi skulle have lavet en lærin
 \textsf{User stories:} Bedre til at definere dem og hvor meget funktionalitet de hver bør indeholde. \\
 Test-first har lidt potentiale hvis det bruges i den rigtige sammenhæng, dog ikke noget vi har benyttet.
 
-\section*{Konklusion på sprints}
+\section{Konklusion på sprints}
 Vores sprints har været for korte, det blev for stresset i forhold til at have noget klar til hvert review og det blev ikke bedre af at vi kun var en gruppe på 3 personer. En større gruppe med mere erfaring med den pågældende teknologi ville have fungeret bedre. \\
 Vi burde have igangsat et prototype projekt forinden vi gik i gang med det egentlige udviklingsprojekt, samt lave længere spikes til at blive kendt med teknologien. I sprint 1 benytter vi XP, mens vi i sprint 2 og 3 benyttede scrum med XP-praktikker, da vi blev mere eller mindre tvunget til det. Det kom til at føles en smule akavet at arbejde med en bestemt process blot for at gøre det.
